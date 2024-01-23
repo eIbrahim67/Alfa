@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black_v1">#000000</color>
+    <color name="black_v2">#5c5c5c</color>
+    <color name="black_v3">#1d1c21</color>
+    <color name="black_v4">#33FFFFFF</color>
+    <color name="black_v5">#80FFFFFF</color>
+
+    <color name="white_v1">#FFFFFF</color>
+    <color name="white_v2">#ebebeb</color>
+    <color name="white_v3">#80EBEBEB</color>
+    <color name="white_v4">#1A000000</color>
+    <color name="white_v5">#80FFFFFF</color>
+    <color name="white_v6">#80FFFFFF</color>
+    <color name="white_v7">#FEFEFE</color>
+
+    <color name="main1">#44c5e4</color>
+    <color name="main2">#eb4492</color>
+    <color name="main1_v2">#8044C5E4</color>
+    <color name="main2_v2">#80EB4492</color>
+
+    <color name="blue_v1">#3c8bd1</color>
+    <color name="blue_v2">#1852C1</color>
+
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="lead_1">#f6dd8a</color>
+    <color name="lead_2">#4983f8</color>
+    <color name="lead_3">#ea6e74</color>
+
+    <color name="part1_dark">#25eae6</color>
+    <color name="part2_dark">#d5b9ff</color>
+    <color name="part3_dark">#edc9aa</color>
+    <color name="part4_dark">#feacad</color>
+
+    <color name="green_v1">#60C069</color>
+
+    <color name="asking_v1">#617af1</color>
+    <color name="asking_v2">#edeffe</color>
+    <color name="asking_v3">#ABB4DB</color>
+
+    <color name="gray_v1">#3c4455</color>
+    <color name="gray_v2">#F3F4F6</color>
+    <color name="gray_v3">#9E9CA3</color>
+    <color name="gray_v4">#898989</color>
+    <color name="gray_v5">#DCDCDC</color>
+
+
+    <color name="lightSea">#2995B3</color>
+
+
+
+</resources>

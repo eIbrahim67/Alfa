@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/hidePostBtnMenuPop"
+        android:title="Hide this post"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/deletePostBtnMenuPop"
+        android:title="Delete this post"
+        tools:ignore="HardcodedText" />
+
+</menu>

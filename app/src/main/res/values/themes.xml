@@ -1,0 +1,522 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Alfa" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:statusBarColor">@color/white_v1</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.Alfa" parent="Base.Theme.Alfa" />
+
+    <style name="BackPage">
+
+        <item name="android:background">@color/white_v1</item>
+
+    </style>
+
+    <style name="TextColor">
+
+        <item name="android:textColor">@color/black_v1</item>
+        <item name="android:textColorHint">@color/black_v2</item>
+    </style>
+
+    <style name="setting_language_src">
+
+        <item name="android:src">@drawable/setting_language_light</item>
+
+    </style>
+
+    <style name="search_background_src">
+
+        <item name="android:background">@drawable/search_background_light</item>
+
+    </style>
+
+    <style name="search_icon_src">
+
+        <item name="android:background">@drawable/search_light</item>
+
+    </style>
+
+
+    <style name="Button_bar_style">
+
+        <item name="backgroundColor">@color/white_v1</item>
+        <item name="iconTint">@color/black_v2</item>
+        <item name="iconTintActive">@color/black_v1</item>
+        <item name="indicatorColor">@color/white_v2</item>
+
+    </style>
+
+    <style name="profile_image_src">
+
+        <item name="android:background">@drawable/outline_light</item>
+        <item name="android:src">@drawable/profile_light</item>
+
+    </style>
+
+
+
+    <style name="fav_background_src">
+
+        <item name="android:background">@drawable/fav_background_light</item>
+
+    </style>
+
+    <style name="more_src">
+
+        <item name="android:src">@drawable/more_light</item>
+
+    </style>
+
+    <style name="coin_src">
+
+        <item name="android:src">@drawable/coin_light</item>
+
+    </style>
+
+    <style name="coin_background_src">
+
+        <item name="android:background">@drawable/coins_background_light</item>
+
+    </style>
+
+    <style name="lead_one_background_src">
+
+        <item name="android:background">@drawable/lead_one_background_light</item>
+
+    </style>
+
+    <style name="lead_two_background_src">
+
+        <item name="android:background">@drawable/lead_two_background_light</item>
+
+    </style>
+
+    <style name="lead_three_background_src">
+
+        <item name="android:background">@drawable/lead_three_background_light</item>
+
+    </style>
+
+    <style name="lead_circle_one_background_src">
+
+        <item name="android:background">@drawable/lead_one_circle_light</item>
+
+    </style>
+
+    <style name="lead_circle_two_background_src">
+
+        <item name="android:background">@drawable/lead_two_circle_light</item>
+
+    </style>
+
+    <style name="lead_circle_three_background_src">
+
+        <item name="android:background">@drawable/lead_three_circle_light</item>
+
+    </style>
+
+    <style name="btn_background_src_v1">
+
+        <item name="android:background">@drawable/bottom_background_light</item>
+
+    </style>
+
+    <style name="user_image_src">
+
+        <item name="android:background">@drawable/league_img_background_light</item>
+        <item name="android:src">@drawable/profile_light</item>
+
+    </style>
+
+    <style name="userPup_image_src">
+
+        <item name="android:background">@drawable/league_img_background_light</item>
+
+    </style>
+
+    <style name="league_btn_background_src">
+
+        <item name="android:textColor">@color/black_v1</item>
+        <item name="android:background">@drawable/bottom_background_light</item>
+
+    </style>
+
+
+    <style name="profile_item_arrow_background">
+
+        <item name="android:src">@drawable/right_light</item>
+
+    </style>
+
+    <style name="profile_items_background">
+
+        <item name="android:background">@drawable/background_items_profile_light</item>
+
+    </style>
+
+    <style name="back_arrow_src">
+
+        <item name="android:src">@drawable/arrow_back_light</item>
+        <item name="android:background">@drawable/circle_ripple_light</item>
+
+    </style>
+
+    <style name="settings_item_src">
+
+        <item name="android:src">@drawable/settings_main</item>
+
+    </style>
+
+    <style name="edit_item_src">
+
+        <item name="android:src">@drawable/edit</item>
+        <item name="android:background">@drawable/circle_ripple_items_light</item>
+
+    </style>
+
+    <style name="input_data_background">
+
+        <item name="android:background">@drawable/input_background_light</item>
+        <item name="android:textColor">@color/black_v1</item>
+        <item name="android:textColorHint">@color/black_v2</item>
+
+    </style>
+
+    <style name="notifications_item_background">
+
+        <item name="android:background">@drawable/profile_items_background_light</item>
+        <item name="android:src">@drawable/notifications_light</item>
+
+    </style>
+
+    <style name="dark_mode_item_background">
+
+        <item name="android:background">@drawable/profile_items_background_light</item>
+        <item name="android:src">@drawable/night_mode</item>
+
+    </style>
+
+    <style name="language_item_background">
+
+        <item name="android:background">@drawable/profile_items_background_light</item>
+        <item name="android:src">@drawable/language_light</item>
+
+    </style>
+
+    <style name="security_item_background">
+
+        <item name="android:background">@drawable/profile_items_background_light</item>
+        <item name="android:src">@drawable/security_light</item>
+
+    </style>
+
+    <style name="billing_item_background">
+
+        <item name="android:background">@drawable/profile_items_background_light</item>
+        <item name="android:src">@drawable/billing_light</item>
+
+    </style>
+
+    <style name="privacy_item_background">
+
+        <item name="android:background">@drawable/profile_items_background_light</item>
+        <item name="android:src">@drawable/privacy_light</item>
+
+    </style>
+
+    <style name="email_item_background">
+
+        <item name="android:src">@drawable/email_light</item>
+
+    </style>
+
+    <style name="call_item_background">
+
+        <item name="android:src">@drawable/call_light</item>
+
+    </style>
+
+    <style name="feedback_item_background">
+
+        <item name="android:src">@drawable/feedback_light</item>
+
+    </style>
+
+
+    <style name="outline_src">
+
+        <item name="android:background">@drawable/outline_light</item>
+
+    </style>
+
+    <style name="facebook_src">
+
+        <item name="android:background">@drawable/facebook_light</item>
+
+    </style>
+
+    <style name="google_src">
+
+        <item name="android:background">@drawable/google_light</item>
+
+    </style>
+
+    <style name="github_src">
+
+        <item name="android:background">@drawable/github_light</item>
+
+    </style>
+
+    <style name="roundedImageViewUser" parent="">
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25dp</item>
+        <item name="color">@color/white_v1</item>
+
+    </style>
+
+
+
+    <style name="roundedImageViewPost" parent="">
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+        <item name="color">@color/white_v1</item>
+
+    </style>
+
+
+    <style name="roundedImageViewUserPage" parent="">
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">40dp</item>
+        <item name="color">@color/white_v1</item>
+
+    </style>
+
+    <style name="roundedImageViewAddPost" parent="">
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+        <item name="color">@color/white_v1</item>
+
+    </style>
+
+
+    <style name="user_image_background_src">
+
+        <item name="android:background">@drawable/user_img_background_light</item>
+
+    </style>
+
+    <style name="post_background">
+
+        <item name="android:background">@drawable/post_ripple_light</item>
+
+    </style>
+
+    <style name="ripple_post_reaction">
+
+        <item name="android:background">@drawable/circle_ripple_post_reaction_light</item>
+
+    </style>
+
+    <style name="more_vertical_src">
+
+        <item name="android:background">@drawable/circle_ripple_post_reaction_light</item>
+        <item name="android:src">@drawable/more_vertical_light</item>
+
+
+    </style>
+
+    <style name="TextColor_v2">
+
+        <item name="android:textColor">@color/gray_v3</item>
+        <item name="android:textColorHint">@color/gray_v3</item>
+
+    </style>
+
+    <style name="checkout_background_btn">
+        <item name="android:background">@drawable/btn_rounded_background_black</item>
+        <item name="android:textColor">@color/white_v1</item>
+    </style>
+
+    <style name="TextColor_v1">
+
+        <item name="android:textColor">@color/black_v1</item>
+        <item name="android:textColorHint">@color/black_v1</item>
+
+    </style>
+
+    <style name="edit_background_src_v2">
+
+        <item name="android:src">@drawable/edit_icon_white</item>
+        <item name="android:background">@drawable/circle_ripple_post_reaction_dark</item>
+
+    </style>
+
+    <style name="edit_item_src_v2">
+
+        <item name="android:src">@drawable/edit_icon_black</item>
+
+    </style>
+
+    <style name="add_image_backgroun_src">
+
+        <item name="android:background">@color/gray_v5</item>
+
+    </style>
+
+    <style name="roundedImageViewTopRightBottomRight" parent="">
+        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">8dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="roundedImageViewTopLeftBottomLeft" parent="">
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeBottomLeft">8dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="roundedImageViewTopLeft" parent="">
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">8dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="roundedImageViewBottomLeft" parent="">
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">8dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="roundedImageViewTopRight" parent="">
+        <item name="cornerSizeTopRight">8dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="roundedImageViewBottomRight" parent="">
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">8dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="delete_bacground_src">
+
+        <item name="android:src">@drawable/delete_icon_white</item>
+        <item name="android:background">@drawable/user_img_background_dark</item>
+
+    </style>
+
+    <style name="delete_image_src">
+
+        <item name="android:src">@drawable/delete_icon_black</item>
+
+    </style>
+
+    <style name="rounded_popup_background">
+
+        <item name="android:popupBackground">@drawable/background_rounded_popupmenu_white</item>
+
+    </style>
+
+    <style name="border_line_rounded_corner_src">
+
+        <item name="android:background">@drawable/border_line_rounded_corner_white</item>
+
+    </style>
+
+    <style name="pic_item_src">
+
+        <item name="android:src">@drawable/pictures_icon_black</item>
+
+    </style>
+
+    <style name="rounded_corner_stroke_main_src">
+
+        <item name="android:background">@drawable/rounded_corner_stroke_main</item>
+
+    </style>
+
+    <style name="btn_background_main_src">
+        <item name="android:background">@drawable/btn_rounded_background_lightsea</item>
+        <item name="android:textColor">@color/white_v1</item>
+    </style>
+
+    <style name="dot_item_src">
+
+        <item name="android:src">@drawable/dot_icon_black</item>
+
+    </style>
+
+    <style name="replay_item_src">
+
+        <item name="android:src">@drawable/replay_icon_black</item>
+
+    </style>
+
+    <style name="posts_item_src">
+
+        <item name="android:src">@drawable/posts_icon_black</item>
+
+    </style>
+
+    <style name="logout_item_src">
+
+        <item name="android:src">@drawable/logout_icon_black</item>
+
+    </style>
+
+    <style name="community_item_src">
+
+        <item name="android:src">@drawable/community_light</item>
+
+    </style>
+
+    <style name="faqs_item_src">
+
+        <item name="android:src">@drawable/faqs_light</item>
+
+    </style>
+
+    <style name="hide_item_src">
+
+        <item name="android:src">@drawable/hide_icon_black</item>
+
+    </style>
+
+    <style name="bookmark_item_src">
+
+        <item name="android:src">@drawable/bookmark_light</item>
+
+    </style>
+
+    <style name="profile_item_src">
+
+        <item name="android:src">@drawable/profile_light</item>
+
+    </style>
+
+    <style name="dots_item_src">
+
+        <item name="android:src">@drawable/black_dot</item>
+
+    </style>
+
+</resources>

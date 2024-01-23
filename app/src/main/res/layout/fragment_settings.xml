@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentsShowrActivity.SettingsFragment"
+    style="@style/BackPage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:padding="7dp"
+                android:id="@+id/back_settings_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                style="@style/back_arrow_src"
+                android:contentDescription="back"
+                tools:ignore="HardcodedText"
+                android:layout_marginStart="20dp"
+                android:layout_centerVertical="true"
+                android:clickable="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:fontFamily="@font/roboto_bold"
+                style="@style/TextColor"
+                android:textSize="23sp"
+                tools:ignore="HardcodedText"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            style="@style/search_background_src"
+            android:orientation="horizontal"
+            android:elevation="5dp">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:hint="Search Keyboard"
+                android:gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:inputType="text"
+                style="@style/TextColor"
+                android:background="@drawable/edittext_background"
+                android:layout_weight="1"
+                tools:ignore="HardcodedText,VisualLintTextFieldSize"
+                android:autofillHints="name"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                style="@style/search_icon_src"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="Search"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Application"
+            style="@style/TextColor"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginStart="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            style="@style/profile_items_background"
+            android:clickable="true"
+            android:focusable="true">
+
+
+            <ImageView
+                style="@style/notifications_item_background"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="Personal Data"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/TextColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Notifications"
+                android:textSize="23sp"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/profile_item_arrow_background"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="GO"
+                    tools:ignore="HardcodedText"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            style="@style/profile_items_background"
+            android:clickable="true"
+            android:focusable="true">
+
+
+            <ImageView
+                style="@style/dark_mode_item_background"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="Personal Data"
+                tools:ignore="HardcodedText"
+                android:rotationY="180"/>
+
+            <TextView
+                style="@style/TextColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Dark Mode"
+                android:textSize="23sp"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            style="@style/profile_items_background"
+            android:clickable="true"
+            android:focusable="true">
+
+
+            <ImageView
+                style="@style/language_item_background"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="Personal Data"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/TextColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Language"
+                android:textSize="23sp"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextColor"
+                    android:text="English"
+                    android:textSize="20sp"
+                    tools:ignore="HardcodedText"
+                    android:layout_toStartOf="@id/arrow_notification"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"/>
+
+                <ImageView
+                    android:id="@+id/arrow_notification"
+                    style="@style/profile_item_arrow_background"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="GO"
+                    tools:ignore="HardcodedText"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_v1"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Privacy"
+            style="@style/TextColor"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginStart="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            style="@style/profile_items_background"
+            android:clickable="true"
+            android:focusable="true">
+
+
+            <ImageView
+                style="@style/security_item_background"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="Personal Data"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/TextColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Security"
+                android:textSize="23sp"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/profile_item_arrow_background"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="GO"
+                    tools:ignore="HardcodedText"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            style="@style/profile_items_background"
+            android:clickable="true"
+            android:focusable="true">
+
+
+            <ImageView
+                style="@style/billing_item_background"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="Personal Data"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/TextColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Billing"
+                android:textSize="23sp"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/profile_item_arrow_background"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="GO"
+                    tools:ignore="HardcodedText"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            style="@style/profile_items_background"
+            android:clickable="true"
+            android:focusable="true">
+
+
+            <ImageView
+                style="@style/privacy_item_background"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="Personal Data"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                style="@style/TextColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Privacy"
+                android:textSize="23sp"
+                tools:ignore="HardcodedText" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    style="@style/profile_item_arrow_background"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="GO"
+                    tools:ignore="HardcodedText"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Sign.SignupActivity"
+    style="@style/BackPage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Welcome\nSign Up!"
+            android:textSize="50sp"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="40dp"
+            style="@style/TextColor_v1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full name"
+            android:textSize="18sp"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:focusable="true"
+            android:layout_marginTop="40dp"
+            style="@style/TextColor_v2"/>
+
+        <EditText
+            android:id="@+id/name_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:inputType="textPersonName"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:focusable="true"
+            style="@style/TextColor_v1"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="18sp"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:focusable="true"
+            android:layout_marginTop="20dp"
+            style="@style/TextColor_v2"/>
+
+        <EditText
+            android:id="@+id/username_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:focusable="true"
+            style="@style/TextColor_v1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="18sp"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:focusable="true"
+            android:layout_marginTop="20dp"
+            style="@style/TextColor_v2"/>
+
+        <EditText
+            android:id="@+id/email_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:focusable="true"
+            style="@style/TextColor_v1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="18sp"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:focusable="true"
+            android:layout_marginTop="20dp"
+            style="@style/TextColor_v2"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/gender_male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                style="@style/checkout_background_btn"
+                android:text="Male"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/gender_female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                style="@style/checkout_background_btn"
+                android:text="Female"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="18sp"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:focusable="true"
+            android:layout_marginTop="20dp"
+            style="@style/TextColor_v2"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/pass_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:inputType="textPassword"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:focusable="true"
+            style="@style/TextColor_v1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm password"
+            android:textSize="18sp"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:focusable="true"
+            android:layout_marginTop="20dp"
+            style="@style/TextColor_v2"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/repass_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:inputType="textPassword"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:focusable="true"
+            style="@style/TextColor_v1"/>
+
+        <CheckBox
+            android:id="@+id/check_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I agree with the terms of services"
+            style="@style/TextColor_v1"
+            tools:ignore="HardcodedText"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            style="@style/checkout_background_btn"
+            android:text="Sign UP"
+            android:textSize="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't have an account? "
+                android:textSize="18sp"
+                android:fontFamily="@font/worksans_variablefont_wght"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:layout_marginStart="20dp"
+                android:focusable="true"
+                style="@style/TextColor_v2"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/btn_signin2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:textSize="18sp"
+                android:fontFamily="@font/worksans_variablefont_wght"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:textColor="@android:color/holo_red_dark"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

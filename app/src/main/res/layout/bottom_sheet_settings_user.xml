@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    style="@style/BackPage">
+
+
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="5dp"
+        style="@style/checkout_background_btn"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/btn_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        style="@style/post_background"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/profile_image_src"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            style="@style/TextColor_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:text="Edit profile"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <ImageView
+            style="@style/profile_item_arrow_background"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="GO"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_bookmarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        style="@style/post_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/bookmark_item_src"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            style="@style/TextColor_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:text="Bookmarks"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <ImageView
+            style="@style/profile_item_arrow_background"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="GO"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_hidden_posts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        style="@style/post_background"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/hide_item_src"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            style="@style/TextColor_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:text="Hidden posts"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <ImageView
+            style="@style/profile_item_arrow_background"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="GO"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_faqs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        style="@style/post_background"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/faqs_item_src"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            style="@style/TextColor_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:text="FAQS"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <ImageView
+            style="@style/profile_item_arrow_background"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="GO"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_community"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        style="@style/post_background"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/faqs_item_src"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            style="@style/TextColor_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:text="Community"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <ImageView
+            style="@style/profile_item_arrow_background"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="GO"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        style="@style/post_background"
+        android:focusable="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/logout_item_src"
+            android:layout_gravity="end"
+            android:padding="10dp"
+            android:layout_marginStart="20dp"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            style="@style/TextColor_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/worksans_variablefont_wght"
+            android:text="Log Out"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <ImageView
+            style="@style/profile_item_arrow_background"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="GO"
+            tools:ignore="HardcodedText"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
