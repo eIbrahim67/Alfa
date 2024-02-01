@@ -1,6 +1,7 @@
 package com.eibrahim.alfa.MainActivity
 
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -18,7 +20,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.eibrahim.alfa.AdapterRecycleViewPosts
 import com.eibrahim.alfa.BottomSheets.BottomSheetEditUserImage
 import com.eibrahim.alfa.BottomSheets.BottomSheetSettingsUser
-import com.eibrahim.alfa.DataClasses.DataPosts
 import com.eibrahim.alfa.DataClasses.ReadDataPosts
 import com.eibrahim.alfa.DeclaredClasses.DeclareDataUsers
 import com.eibrahim.alfa.DeclaredClasses.FormatNumber
@@ -49,7 +50,7 @@ class ProfileFragment : Fragment() {
     private lateinit var imgAccount: ImageView
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var firestoreDb: FirebaseFirestore
-    private lateinit var rv: RecyclerView
+    private lateinit var recyclerView_posts_and_replies_profile: RecyclerView
     private lateinit var List_rv : ArrayList<ReadDataPosts>
     private lateinit var adapter : AdapterRecycleViewPosts
     private lateinit var uid : String
@@ -57,13 +58,17 @@ class ProfileFragment : Fragment() {
     private lateinit var addPost_btn : Button
     private lateinit var edit_image_user : RelativeLayout
     private lateinit var btn_settings : RelativeLayout
-
+    private lateinit var btn_posts_user : RelativeLayout
+    private lateinit var btn_replies_user : RelativeLayout
+    private lateinit var choose_posts_user : LinearLayout
+    private lateinit var choose_replies_user : LinearLayout
+    private var whichRecycleView: Int = 0
     override fun onResume() {
         super.onResume()
 
         if (newPostAdded){
 
-            EventChangeLister()
+            whichRecycleView()
             newPostAdded = false
         }
 
@@ -73,27 +78,44 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val Root = inflater.inflate(R.layout.fragment_profile, container, false)
+        val root = inflater.inflate(R.layout.fragment_profile, container, false)
 
         val intent = Intent(activity, FragmentsViewerActivity::class.java)
 
-        fullName = Root.findViewById(R.id.fullName)
-        userName = Root.findViewById(R.id.userName)
-        noPosts = Root.findViewById(R.id.noPosts)
-        noFollowers = Root.findViewById(R.id.noFollowers)
-        noFollowing = Root.findViewById(R.id.noFollowing)
-        imgAccount = Root.findViewById(R.id.user_img_profile)
-        swipeRefreshLayout = Root.findViewById(R.id.fragment_profile)
-        rv = Root.findViewById(R.id.recyclerview_posts_profile)
-        addPost_btn = Root.findViewById(R.id.add_post_btn)
-        edit_image_user = Root.findViewById(R.id.edit_image_user)
-        btn_settings = Root.findViewById(R.id.btn_settings)
+        fullName = root.findViewById(R.id.fullName)
+        userName = root.findViewById(R.id.userName)
+        noPosts = root.findViewById(R.id.noPosts)
+        noFollowers = root.findViewById(R.id.noFollowers)
+        noFollowing = root.findViewById(R.id.noFollowing)
+        imgAccount = root.findViewById(R.id.user_img_profile)
+        swipeRefreshLayout = root.findViewById(R.id.fragment_profile)
+        recyclerView_posts_and_replies_profile = root.findViewById(R.id.recyclerView_posts_and_replies_profile)
+        addPost_btn = root.findViewById(R.id.add_post_btn)
+        edit_image_user = root.findViewById(R.id.edit_image_user)
+        btn_settings = root.findViewById(R.id.btn_settings)
+        btn_posts_user = root.findViewById(R.id.btn_posts_user)
+        btn_replies_user = root.findViewById(R.id.btn_replies_user)
 
+        choose_posts_user = root.findViewById(R.id.choose_posts_user)
+        choose_replies_user = root.findViewById(R.id.choose_replies_user)
 
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
         uid = auth.currentUser?.uid.toString()
 
+        btn_posts_user.setOnClickListener {
+            choose_posts_user.visibility = View.VISIBLE
+            choose_replies_user.visibility = View.GONE
+            whichRecycleView = 0
+            whichRecycleView()
+        }
+
+        btn_replies_user.setOnClickListener {
+            choose_replies_user .visibility = View.VISIBLE
+            choose_posts_user.visibility = View.GONE
+            whichRecycleView = 1
+            whichRecycleView()
+        }
 
         addPost_btn.setOnClickListener {
 
@@ -102,14 +124,14 @@ class ProfileFragment : Fragment() {
         }
 
         declareData()
-        EventChangeLister()
+        whichRecycleView()
 
-        rv.layoutManager = LinearLayoutManager(requireContext())
-        rv.setHasFixedSize(true)
+        recyclerView_posts_and_replies_profile.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView_posts_and_replies_profile.setHasFixedSize(true)
 
         swipeRefreshLayout.setOnRefreshListener {
             declareData()
-            EventChangeLister()
+            whichRecycleView()
             swipeRefreshLayout.isRefreshing = false
         }
 
@@ -127,8 +149,21 @@ class ProfileFragment : Fragment() {
 
         }
 
-        return Root
+        return root
 
+    }
+
+    private fun whichRecycleView(){
+
+        when(whichRecycleView){
+
+            0 -> {
+                EventChangeListerPosts()
+            }
+            1 -> {
+                EventChangeListerReplies()
+            }
+        }
     }
 
     private fun declareData(){
@@ -155,7 +190,7 @@ class ProfileFragment : Fragment() {
     }
 
 
-    private fun EventChangeLister() {
+    private fun EventChangeListerPosts() {
         firestoreDb = FirebaseFirestore.getInstance()
         firestore = FirebaseFirestore.getInstance()
         val auth = FirebaseAuth.getInstance()
@@ -201,7 +236,55 @@ class ProfileFragment : Fragment() {
             }
 
         adapter = AdapterRecycleViewPosts(requireContext(), List_rv, "ProfileFragment")
-        rv.adapter = adapter
+        recyclerView_posts_and_replies_profile.adapter = adapter
+    }
+
+    private fun EventChangeListerReplies() {
+        firestore = FirebaseFirestore.getInstance()
+        val auth = FirebaseAuth.getInstance()
+        uid = auth.currentUser?.uid.toString()
+        List_rv = arrayListOf()
+
+        firestore.collection("Users").document(uid)
+            .get().addOnSuccessListener { documentSnapshot ->
+                if (documentSnapshot.exists()) {
+                    arrPosts = documentSnapshot.get("repliesId") as List<String>
+
+                    val postFetchTasks = ArrayList<Task<DocumentSnapshot>>()
+                    //noPosts.text = arrPosts.size.toString()
+                    for (postId in arrPosts) {
+                        val postFetchTask = firestore.collection("replies").document(postId).get()
+                        postFetchTasks.add(postFetchTask)
+                    }
+
+                    Tasks.whenAllSuccess<DocumentSnapshot>(postFetchTasks)
+                        .addOnSuccessListener { postSnapshots ->
+                            val fetchedPosts = postSnapshots.mapNotNull { snapshot ->
+                                snapshot.toObject<ReadDataPosts>()
+                            }
+
+                            fetchedPosts.sortedByDescending { it.time }
+                                .forEach { post ->
+                                    fetchUserDataAndUpdateItem(post)
+
+                                    val declareDataUsers = DeclareDataUsers()
+                                    declareDataUsers.declareData(object : DeclareDataUsers.OnDataDeclaredListener {
+                                        override fun onDataDeclared(userAdminData: UserAdminData?) {
+
+                                            if (userAdminData != null) {
+
+                                                post.isBookmarked = userAdminData.postsBookmarks?.contains(post.postId.toString())
+
+                                            }
+                                        }
+                                    }, FirebaseAuth.getInstance().uid.toString())
+                                }
+                        }
+                }
+            }
+
+        adapter = AdapterRecycleViewPosts(requireContext(), List_rv, "ProfileFragment")
+        recyclerView_posts_and_replies_profile.adapter = adapter
     }
 
     private fun fetchUserDataAndUpdateItem(item: ReadDataPosts) {
@@ -217,7 +300,7 @@ class ProfileFragment : Fragment() {
                         item.userId?.name = it.name
                         item.userId?.userName = it.userName
                         item.userId?.imgAccount = it.imageUrl
-                      //  item.postsBookmarks = userData.postsBookmarks
+                        //  item.postsBookmarks = userData.postsBookmarks
                     }
                 }
                 List_rv.add(item)

@@ -22,8 +22,6 @@ import com.eibrahim.alfa.DataClasses.ReadDataPosts
 import com.eibrahim.alfa.FragmentsShowrActivity.FragmentsViewerActivity
 import com.eibrahim.alfa.FragmentsShowrActivity.ShowedImageUrl
 import com.eibrahim.alfa.FragmentsShowrActivity.no_page
-import com.eibrahim.alfa.PostFragments.ShowedPostData
-import com.eibrahim.alfa.PostFragments.ShowedPostId
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -43,7 +41,6 @@ class AdapterRecycleViewPosts(
     private lateinit var firestore : FirebaseFirestore
     private lateinit var auth: FirebaseAuth
     private lateinit var postCurrentId : String
-    private lateinit var id : String
     private lateinit var currentUserId : String
 
 
@@ -62,19 +59,15 @@ class AdapterRecycleViewPosts(
 
         var post = postsDataList[position]
         val time = post.time?.let { convertTime(it) }
-
+        firestore = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
         currentUserId = auth.currentUser?.uid.toString()
 
-        id = post.userId?.id.toString()
         postCurrentId = post.postId.toString()
 
-        var likesBool = post.likes?.contains(currentUserId) == true
-        //var dislikesBool = item.dislikes?.contains(currentId) == true
+        holder.like_num.text = post.noLikes.toString()
 
-        //if(dislikesBool)
-        //holder.dislikeBtn.setImageResource(R.drawable.disliked)
-        if(likesBool)
+        if(post.isLoved!!)
             holder.likeBtn.setImageResource(R.drawable.loved)
         if(post.isBookmarked!!)
             holder.bookmarkBtn.setImageResource(R.drawable.bookmarked)
@@ -88,11 +81,11 @@ class AdapterRecycleViewPosts(
         holder.userName.text = post.userId?.userName.toString()
 
         if(post.userId?.imgAccount != null)
-            Picasso.get().load(post.userId?.imgAccount).placeholder(R.drawable.infinity_loading_white).into(holder.imagePup)
+            Picasso.get().load(post.userId?.imgAccount).into(holder.imagePup)
         else
             Picasso.get().load(
                 "https://firebasestorage.googleapis.com/v0/b/alfa-ed1e3.appspot.com/o/images%2Ffetrah.jpg?alt=media&token=3f776698-48e5-4ed8-897f-f42cbefffa27"
-            ).placeholder(R.drawable.infinity_loading_white).into(holder.imagePup)
+            ).into(holder.imagePup)
 
         holder.namePup.text = post.userId?.name.toString()
 
@@ -100,18 +93,13 @@ class AdapterRecycleViewPosts(
 
         holder.postText.text = post.postText.toString()
 
-        Picasso.get().load(post.imageUrl).placeholder(R.drawable.infinity_loading_white).into(holder.postImg)
-
-        val likesArr = post.likes?.toMutableList() ?: mutableListOf()
-
-        holder.like_num.setText(likesArr.size.toString())
+        Picasso.get().load(post.imageUrl).into(holder.postImg)
 
         var intent = Intent(context, FragmentsViewerActivity::class.java)
+
         holder.itemView.setOnClickListener {
 
             no_page = 8
-            ShowedPostId =  post.postId.toString()
-            ShowedPostData = post
             context.startActivity(intent)
 
         }
@@ -126,22 +114,19 @@ class AdapterRecycleViewPosts(
 
         holder.likeBtn.setOnClickListener {
 
-            currentUserId = auth.currentUser?.uid.toString()
-            id = post.userId?.id.toString()
-            postCurrentId = post.postId.toString()
-            var likedBool = likesArr.contains(currentUserId) == true
-
             firestore = FirebaseFirestore.getInstance()
+            currentUserId = auth.currentUser?.uid.toString()
+            postCurrentId = post.postId.toString()
 
-            val documentRefPosts = firestore.collection("posts").document(postCurrentId)
+            val documentRefPosts = firestore.collection("postsLikes").document(postCurrentId)
 
-            if(likedBool){
+            if(post.isLoved!!){
 
                 holder.likeBtn.setImageResource(R.drawable.love)
-                likesArr.remove(currentUserId)
+                holder.like_num.setText((holder.like_num.text.toString().toInt() - 1).toString())
+                post.isLoved = false
                 documentRefPosts.update("likes", FieldValue.arrayRemove(currentUserId))
                     .addOnSuccessListener {
-
                     }
                     .addOnFailureListener { e ->
 
@@ -149,52 +134,22 @@ class AdapterRecycleViewPosts(
 
             }else{
                 holder.likeBtn.setImageResource(R.drawable.loved)
-                likesArr.add(currentUserId)
+                holder.like_num.setText((holder.like_num.text.toString().toInt() + 1).toString())
+                post.isLoved = true
                 documentRefPosts.update("likes", FieldValue.arrayUnion(currentUserId))
                     .addOnSuccessListener {
                     }
                     .addOnFailureListener { e ->
                     }
-
             }
 
-            holder.like_num.setText(likesArr.size.toString())
-
         }
-
-        /*
-        holder.dislikeBtn.setOnClickListener {
-
-            id = item.userId?.id.toString()
-            dislikesBool = item.dislikes?.contains(id) == true
-            postCurrentId = item.postId.toString()
-
-            if (dislikesBool == true)
-                return@setOnClickListener
-
-            holder.likeBtn.setImageResource(R.drawable.like)
-            holder.dislikeBtn.setImageResource(R.drawable.disliked)
-
-            val updatedLikes = item.likes?.toMutableList() ?: mutableListOf()
-            updatedLikes.remove(id)
-            item.likes = updatedLikes
-
-            val updatedDislikes = item.dislikes?.toMutableList() ?: mutableListOf()
-            updatedDislikes.add(id)
-            item.dislikes = updatedDislikes
-
-
-            updatelikes(item.likes ?: emptyList(), item.dislikes ?: emptyList())
-
-        }
-*/
 
         holder.bookmarkBtn.setOnClickListener {
-            currentUserId = auth.currentUser?.uid.toString()
-            id = post.userId?.id.toString()
-            postCurrentId = post.postId.toString()
 
             firestore = FirebaseFirestore.getInstance()
+            currentUserId = auth.currentUser?.uid.toString()
+            postCurrentId = post.postId.toString()
 
             val documentRefUser = firestore.collection("Users").document(currentUserId)
 
@@ -204,10 +159,8 @@ class AdapterRecycleViewPosts(
                 post.isBookmarked = false
                 documentRefUser.update("postsBookmarks", FieldValue.arrayRemove(postCurrentId))
                     .addOnSuccessListener {
-
                     }
                     .addOnFailureListener { e ->
-
                     }
 
             }else{
@@ -261,7 +214,8 @@ class AdapterRecycleViewPosts(
 
                 }
 
-            }else if(nameOfFragment.equals("ProfileFragment")){
+            }
+            else if(nameOfFragment.equals("ProfileFragment")) {
                 popupMenu.inflate(R.menu.menu_pop_my_post)
                 popupMenu.setOnMenuItemClickListener {item: MenuItem ->
                     when(item.itemId){
@@ -309,6 +263,10 @@ class AdapterRecycleViewPosts(
                             firestore = FirebaseFirestore.getInstance()
                             val documentRefPost = firestore.collection("posts").document(postCurrentId)
                             val documentRefUser = firestore.collection("Users").document(currentUserId)
+                            val documentRecPostsLikes = firestore.collection("postsLikes").document(postCurrentId)
+
+                            documentRecPostsLikes.delete()
+
                             documentRefPost.delete()
                                 .addOnSuccessListener{
 
@@ -339,7 +297,8 @@ class AdapterRecycleViewPosts(
                     }
 
                 }
-            }else{
+            }
+            else{
                 popupMenu.inflate(R.menu.menu_pop_post)
                 popupMenu.setOnMenuItemClickListener {item: MenuItem ->
 

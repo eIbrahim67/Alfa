@@ -2,6 +2,7 @@ package com.eibrahim.alfa.PostFragments
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -159,6 +160,20 @@ class AddPostFragment : Fragment() {
             var firestore = FirebaseFirestore.getInstance()
             val documentRecPosts = firestore.collection("posts").document()
             val documentRecUsers = firestore.collection("Users").document(uid)
+            val documentRecPostsLikes = firestore.collection("postsLikes").document(documentRecPosts.id.toString())
+
+            var likesMap = HashMap<String, Any>()
+            likesMap.put("likes", ArrayList<String>())
+
+            documentRecPostsLikes.set(likesMap)
+                .addOnSuccessListener { Log.d("Firestore", "Document added with ID: ") }
+                .addOnFailureListener { e ->
+                    Log.w(
+                        "Firestore",
+                        "Error adding document",
+                        e
+                    )
+                }
 
             val dataPost = DataPosts()
 
@@ -169,10 +184,6 @@ class AddPostFragment : Fragment() {
             }
 
             dataPost.time = System.currentTimeMillis()
-
-            dataPost.dislikes = emptyList()
-
-            dataPost.likes = emptyList()
 
             dataPost.userId= UserId(id = uid)
 

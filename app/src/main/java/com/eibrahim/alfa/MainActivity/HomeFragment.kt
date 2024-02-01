@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreException
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.ktx.toObject
 
 
 class HomeFragment : Fragment() {
@@ -110,17 +112,30 @@ class HomeFragment : Fragment() {
                                     override fun onDataDeclared(userAdminData: UserAdminData?) {
 
                                         if (userAdminData != null) {
-
                                             item.isBookmarked = userAdminData.postsBookmarks?.contains(item.postId.toString())
 
                                         }
                                     }
                                 }, FirebaseAuth.getInstance().uid.toString())
+
+                                firestore.collection("postsLikes").document(item.postId.toString())
+                                    .get()
+                                    .addOnSuccessListener { documentSnapshot ->
+                                        if (documentSnapshot.exists()) {
+                                            val data = documentSnapshot.data
+                                            if (data != null) {
+                                                val likesArray = data["likes"] as? ArrayList<String>
+                                                likesArray?.let {
+                                                    item.isLoved = likesArray.contains(FirebaseAuth.getInstance().uid.toString())
+                                                    item.noLikes = likesArray.size.toLong()
+                                                }
+                                            }
+                                        }
+                                    }
                             }
-
                         }
-
                     }
+
 
                     adapter2 = AdapterRecycleViewPosts(requireContext(), List_rv2, "HomeFragment", requireActivity().supportFragmentManager)
                     rv2.adapter = adapter2
