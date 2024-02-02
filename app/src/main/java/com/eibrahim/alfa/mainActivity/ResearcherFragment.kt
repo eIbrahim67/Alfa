@@ -12,7 +12,6 @@ import com.eibrahim.alfa.R
 class ResearcherFragment : Fragment() {
 
 
-    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

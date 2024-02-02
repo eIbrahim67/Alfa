@@ -104,8 +104,7 @@ class AddPostFragment : Fragment() {
         val adapterRvTags = AdapterRecyclerviewTags(
             listOfData, requireContext()
         )
-        recyclerviewTags.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        recyclerviewTags.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         add_new_tag.setOnClickListener {
 

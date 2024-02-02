@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
     private lateinit var firestoreDb: FirebaseFirestore
     private lateinit var recyclerView: RecyclerView
     private lateinit var listDataRecyclerView : ArrayList<ReadDataPosts>
-    private lateinit var adapter2 : AdapterRecycleViewPosts
+    private lateinit var adapter : AdapterRecycleViewPosts
     private lateinit var uid : String
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var auth: FirebaseAuth
@@ -101,21 +101,21 @@ class HomeFragment : Fragment() {
                     }
                     for (dc: DocumentChange in value?.documentChanges!!) {
                         if (dc.type == DocumentChange.Type.ADDED) {
-                            val item = dc.document.toObject(ReadDataPosts::class.java)
+                            val post = dc.document.toObject(ReadDataPosts::class.java)
                             if (dc.document.id[0] != '*'){
-                                fetchUserDataAndUpdateItem(item)
+                                fetchUserDataAndUpdateItem(post)
                                 val declareDataUsers = DeclareDataUsers()
                                 declareDataUsers.declareData(object : DeclareDataUsers.OnDataDeclaredListener {
                                     override fun onDataDeclared(userAdminData: UserAdminData?) {
 
                                         if (userAdminData != null) {
-                                            item.isBookmarked = userAdminData.postsBookmarks?.contains(item.postId.toString())
+                                            post.isBookmarked = userAdminData.postsBookmarks?.contains(post.postId.toString())
 
                                         }
                                     }
                                 }, FirebaseAuth.getInstance().uid.toString())
 
-                                firestore.collection("postsLikes").document(item.postId.toString())
+                                firestore.collection("postsLikes").document(post.postId.toString())
                                     .get()
                                     .addOnSuccessListener { documentSnapshot ->
                                         if (documentSnapshot.exists()) {
@@ -123,8 +123,8 @@ class HomeFragment : Fragment() {
                                             if (data != null) {
                                                 val likesArray = data["likes"] as? ArrayList<String>
                                                 likesArray?.let {
-                                                    item.isLoved = likesArray.contains(FirebaseAuth.getInstance().uid.toString())
-                                                    item.noLikes = likesArray.size.toLong()
+                                                    post.isLoved = likesArray.contains(FirebaseAuth.getInstance().uid.toString())
+                                                    post.noLikes = likesArray.size.toLong()
                                                 }
                                             }
                                         }
@@ -134,15 +134,14 @@ class HomeFragment : Fragment() {
                     }
 
 
-                    adapter2 = AdapterRecycleViewPosts(requireContext(), listDataRecyclerView, "HomeFragment", requireActivity().supportFragmentManager)
-                    recyclerView.adapter = adapter2
+                    adapter = AdapterRecycleViewPosts(requireContext(), listDataRecyclerView, "HomeFragment", requireActivity().supportFragmentManager)
+                    recyclerView.adapter = adapter
 
                 }
             })
 
     }
 
-    @SuppressLint("NotifyDataSetChanged")
     private fun fetchUserDataAndUpdateItem(item: ReadDataPosts ) {
 
         if (item.userId?.id == null)
@@ -158,7 +157,7 @@ class HomeFragment : Fragment() {
                     item.userId?.imgAccount = userAdminData.imageUrl
 
                     listDataRecyclerView.add(item)
-                    adapter2.notifyDataSetChanged()
+                    adapter.notifyDataSetChanged()
                 }
             }
         }, item.userId?.id.toString())

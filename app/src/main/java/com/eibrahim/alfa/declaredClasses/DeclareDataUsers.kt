@@ -24,16 +24,13 @@ class DeclareDataUsers {
                         UserAdminData(
                             name = data["name"] as? String,
                             userName = data["userName"] as? String,
-                            followers = data["followers"] as? Long,
-                            following = data["following"] as? Long,
+                            followers = data["followers"] as? List<String>,
+                            following = data["following"] as? List<String>,
                             imageUrl = data["imageUrl"] as? String,
-                            imageBackUrl = data["imageBackUrl"] as? String,
-                            noPosts = data["noPosts"] as? Long,
                             specialist = data["specialist"] as? String,
                             webSite = data["webSite"] as? String,
                             gender = data["gender"] as? String,
                             whatsApp = data["whatsApp"] as? String,
-                            points = data["points"] as? Long,
                             postsId = data["postsId"] as? List<String>,
                             postsBookmarks = data["postsBookmarks"] as? List<String>
                         )

@@ -101,7 +101,6 @@ class SignupActivity : AppCompatActivity() {
 
         val firestore = FirebaseFirestore.getInstance()
         val DocumentRef: DocumentReference = firestore.collection("Users").document(userId)
-        val imageUrlTemp = "https://firebasestorage.googleapis.com/v0/b/alfa-ed1e3.appspot.com/o/images%2Ffetrah.jpg?alt=media&token=cc1e74f2-233d-40d0-a3bf-a0d41b8efe51"
 
         val imageAccUrlTemp : String = if(gender == "male")
             "https://firebasestorage.googleapis.com/v0/b/alfa-ed1e3.appspot.com/o/images%2Fmen.png?alt=media&token=9bcf379f-8a9e-45bf-b7c6-661d7cae18a3"
@@ -110,11 +109,12 @@ class SignupActivity : AppCompatActivity() {
 
         val userData = UserAdminData(
 
-            0, 0, gender,
-            imageAccUrlTemp,
-            imageUrlTemp,
-            fnameTxt.text.toString(), 0, 0, null,
-            usernameSignup.text.toString(), null, null, emptyList(), emptyList()
+            emptyList(), emptyList(),
+            gender, imageAccUrlTemp,
+            fnameTxt.text.toString(), null,
+
+            usernameSignup.text.toString(), null, null,
+            emptyList(), emptyList()
 
         )
 

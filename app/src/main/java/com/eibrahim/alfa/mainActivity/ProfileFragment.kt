@@ -172,12 +172,10 @@ class ProfileFragment : Fragment() {
             override fun onDataDeclared(userAdminData: UserAdminData?) {
                 // Now you can use userAdminData here
                 if (userAdminData != null) {
-                    noPosts.text = userAdminData.noPosts.toString()
                     fullName.text = userAdminData.name.toString()
                     userName.text = userAdminData.userName.toString()
-                    noFollowers.text = FormatNumber.format(userAdminData.followers!!)
-                    noFollowing.text = FormatNumber.format(userAdminData.following!!)
-                    noPosts.text = FormatNumber.format(userAdminData.noPosts!!)
+                    noFollowers.text = FormatNumber.format(userAdminData.followers?.size!!.toLong())
+                    noFollowing.text = FormatNumber.format(userAdminData.following?.size!!.toLong())
                     Picasso.get().load(userAdminData.imageUrl).into(imgAccount)
                 }
             }
@@ -226,12 +224,27 @@ class ProfileFragment : Fragment() {
                                             }
                                         }
                                     }, FirebaseAuth.getInstance().uid.toString())
+
+                                    firestore.collection("postsLikes").document(post.postId.toString())
+                                        .get()
+                                        .addOnSuccessListener { documentSnapshot ->
+                                            if (documentSnapshot.exists()) {
+                                                val data = documentSnapshot.data
+                                                if (data != null) {
+                                                    val likesArray = data["likes"] as? ArrayList<String>
+                                                    likesArray?.let {
+                                                        post.isLoved = likesArray.contains(FirebaseAuth.getInstance().uid.toString())
+                                                        post.noLikes = likesArray.size.toLong()
+                                                    }
+                                                }
+                                            }
+                                        }
                                 }
                         }
                 }
             }
 
-        adapter = AdapterRecycleViewPosts(requireContext(), listDataRecyclerView, "ProfileFragment")
+        adapter = AdapterRecycleViewPosts(requireContext(), listDataRecyclerView, "ProfileFragment", requireActivity().supportFragmentManager)
         recyclerviewPostsAndRepliesProfile.adapter = adapter
     }
 
@@ -247,7 +260,6 @@ class ProfileFragment : Fragment() {
                     val arrPosts = documentSnapshot.get("repliesId") as List<*>
 
                     val postFetchTasks = ArrayList<Task<DocumentSnapshot>>()
-                    //noPosts.text = arrPosts.size.toString()
                     for (postId in arrPosts) {
                         val postFetchTask = firestore.collection("replies").document(postId.toString()).get()
                         postFetchTasks.add(postFetchTask)
@@ -274,37 +286,51 @@ class ProfileFragment : Fragment() {
                                             }
                                         }
                                     }, FirebaseAuth.getInstance().uid.toString())
+
+                                    firestore.collection("postsLikes").document(post.postId.toString())
+                                        .get()
+                                        .addOnSuccessListener { documentSnapshot ->
+                                            if (documentSnapshot.exists()) {
+                                                val data = documentSnapshot.data
+                                                if (data != null) {
+                                                    val likesArray = data["likes"] as? ArrayList<String>
+                                                    likesArray?.let {
+                                                        post.isLoved = likesArray.contains(FirebaseAuth.getInstance().uid.toString())
+                                                        post.noLikes = likesArray.size.toLong()
+                                                    }
+                                                }
+                                            }
+                                        }
                                 }
+                            adapter = AdapterRecycleViewPosts(requireContext(), listDataRecyclerView, "ProfileFragment", requireActivity().supportFragmentManager)
+                            recyclerviewPostsAndRepliesProfile.adapter = adapter
+
                         }
+
                 }
             }
 
-        adapter = AdapterRecycleViewPosts(requireContext(), listDataRecyclerView, "ProfileFragment")
-        recyclerviewPostsAndRepliesProfile.adapter = adapter
     }
 
-    private fun fetchUserDataAndUpdateItem(item: ReadDataPosts) {
+    private fun fetchUserDataAndUpdateItem(item: ReadDataPosts ) {
+
         if (item.userId?.id == null)
             return
 
-        firestore.collection("Users").document(item.userId?.id ?: "")
-            .get()
-            .addOnSuccessListener { documentSnapshot ->
-                if (documentSnapshot.exists()) {
-                    val userData = documentSnapshot.toObject<UserAdminData>()
-                    userData?.let {
-                        item.userId?.name = it.name
-                        item.userId?.userName = it.userName
-                        item.userId?.imgAccount = it.imageUrl
-                        //  item.postsBookmarks = userData.postsBookmarks
-                    }
+        val declareDataUsers = DeclareDataUsers()
+        declareDataUsers.declareData(object : DeclareDataUsers.OnDataDeclaredListener {
+            override fun onDataDeclared(userAdminData: UserAdminData?) {
+                if (userAdminData != null) {
+
+                    item.userId?.name = userAdminData.name
+                    item.userId?.userName = userAdminData.userName
+                    item.userId?.imgAccount = userAdminData.imageUrl
+
+                    listDataRecyclerView.add(item)
+                    adapter.notifyDataSetChanged()
                 }
-                listDataRecyclerView.add(item)
-                //adapter.notifyDataSetChanged()
             }
-            .addOnFailureListener { e ->
-                Log.e("Firestore Error", "Failed to fetch user data: ${e.message}")
-            }
+        }, item.userId?.id.toString())
     }
 
 }
