@@ -34,21 +34,22 @@
             android:layout_gravity="end"
             android:padding="10dp"
             android:layout_marginStart="20dp"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no" />
 
         <TextView
             style="@style/TextColor_v1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:fontFamily="@font/worksans_variablefont_wght"
+            android:fontFamily="@font/works_ans_v1"
             android:text="Edit profile"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <Space
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
@@ -83,21 +84,22 @@
             android:layout_gravity="end"
             android:padding="10dp"
             android:layout_marginStart="20dp"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no" />
 
         <TextView
             style="@style/TextColor_v1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:fontFamily="@font/worksans_variablefont_wght"
+            android:fontFamily="@font/works_ans_v1"
             android:text="Bookmarks"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <Space
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
@@ -132,21 +134,22 @@
             android:layout_gravity="end"
             android:padding="10dp"
             android:layout_marginStart="20dp"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no" />
 
         <TextView
             style="@style/TextColor_v1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:fontFamily="@font/worksans_variablefont_wght"
+            android:fontFamily="@font/works_ans_v1"
             android:text="Hidden posts"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <Space
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
@@ -181,21 +184,22 @@
             android:layout_gravity="end"
             android:padding="10dp"
             android:layout_marginStart="20dp"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no" />
 
         <TextView
             style="@style/TextColor_v1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:fontFamily="@font/worksans_variablefont_wght"
+            android:fontFamily="@font/works_ans_v1"
             android:text="FAQS"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <Space
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
@@ -230,21 +234,22 @@
             android:layout_gravity="end"
             android:padding="10dp"
             android:layout_marginStart="20dp"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no" />
 
         <TextView
             style="@style/TextColor_v1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:fontFamily="@font/worksans_variablefont_wght"
+            android:fontFamily="@font/works_ans_v1"
             android:text="Community"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <Space
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
@@ -279,21 +284,22 @@
             android:layout_gravity="end"
             android:padding="10dp"
             android:layout_marginStart="20dp"
-            android:background="@android:color/transparent"/>
+            android:background="@android:color/transparent"
+            android:importantForAccessibility="no" />
 
         <TextView
             style="@style/TextColor_v1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:fontFamily="@font/worksans_variablefont_wght"
+            android:fontFamily="@font/works_ans_v1"
             android:text="Log Out"
             android:textSize="18sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <Space
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 

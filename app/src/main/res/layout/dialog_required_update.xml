@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/rounded_dialog_edit_user_image_light"
     android:orientation="vertical">
 
@@ -12,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="New Updated needed!"
         android:textSize="23sp"
-        android:fontFamily="@font/worksans_variablefont_wght"
+        android:fontFamily="@font/works_ans_v1"
         style="@style/TextColor"
         android:textStyle="bold"
         android:paddingEnd="20dp"
@@ -32,7 +31,8 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
         android:layout_marginRight="60dp"
-        android:layout_marginLeft="60dp"/>
+        android:layout_marginLeft="60dp"
+        android:importantForAccessibility="no" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:text="QUIT"
             android:textSize="18sp"
             android:textAllCaps="false"
-            android:fontFamily="@font/worksans_variablefont_wght"
+            android:fontFamily="@font/works_ans_v1"
             android:textStyle="bold"
             style="@style/TextColor_v2"
             android:paddingEnd="20dp"
@@ -75,7 +75,7 @@
             android:textSize="18sp"
             android:textAllCaps="false"
             android:textColor="@android:color/holo_blue_dark"
-            android:fontFamily="@font/worksans_variablefont_wght"
+            android:fontFamily="@font/works_ans_v1"
             android:textStyle="bold"
             android:paddingEnd="20dp"
             android:paddingStart="20dp"

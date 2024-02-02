@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".FragmentsShowrActivity.BookmarksFragment"
+    tools:context=".fragmentsShowrActivity.BookmarksFragment"
     style="@style/BackPage"
     android:id="@+id/fragment_Bookmarked_posts">
 
@@ -33,7 +33,8 @@
                     tools:ignore="HardcodedText"
                     android:layout_marginStart="20dp"
                     android:layout_centerVertical="true"
-                    android:clickable="true"/>
+                    android:clickable="true"
+                    android:focusable="true" />
 
                 <TextView
                     android:layout_width="wrap_content"

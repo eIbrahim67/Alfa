@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity.ProfileFragment"
+    tools:context=".mainActivity.ProfileFragment"
     style="@style/BackPage"
     android:id="@+id/fragment_profile">
 
@@ -32,7 +32,8 @@
                     android:layout_height="wrap_content"
                     style="@style/user_image_background_src"
                     android:clickable="true"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:focusable="true">
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/user_img_profile"
@@ -51,7 +52,8 @@
                     android:orientation="horizontal"
                     android:baselineAligned="false"
                     android:clickable="true"
-                    android:layout_gravity="center_vertical">
+                    android:layout_gravity="center_vertical"
+                    android:focusable="true">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -79,7 +81,7 @@
                             android:text="Posts"
                             android:layout_gravity="center_horizontal"
                             style="@style/TextColor"
-                            android:fontFamily="@font/worksans_variablefont_wght"
+                            android:fontFamily="@font/works_ans_v1"
                             android:textSize="18sp"
                             tools:ignore="HardcodedText" />
 
@@ -115,7 +117,7 @@
                             android:text="Followers"
                             android:layout_gravity="center_horizontal"
                             style="@style/TextColor"
-                            android:fontFamily="@font/worksans_variablefont_wght"
+                            android:fontFamily="@font/works_ans_v1"
                             android:textSize="18sp"
                             tools:ignore="HardcodedText" />
 
@@ -151,7 +153,7 @@
                             android:text="Following"
                             android:layout_gravity="center_horizontal"
                             style="@style/TextColor"
-                            android:fontFamily="@font/worksans_variablefont_wght"
+                            android:fontFamily="@font/works_ans_v1"
                             android:textSize="18sp"
                             tools:ignore="HardcodedText" />
 
@@ -169,14 +171,15 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="RelativeOverlap">
 
                     <TextView
                         android:id="@+id/fullName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
-                        android:fontFamily="@font/worksans_variablefont_wght"
+                        android:fontFamily="@font/works_ans_v1"
                         android:textStyle="bold"
                         style="@style/TextColor"
                         android:textSize="23sp"
@@ -190,7 +193,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
-                        android:fontFamily="@font/worksans_variablefont_wght"
+                        android:fontFamily="@font/works_ans_v1"
                         style="@style/TextColor_v2"
                         android:textSize="17sp"
                         android:layout_marginStart="20dp"
@@ -214,7 +217,7 @@
                         style="@style/btn_background_main_src"
                         android:text="Add post"
                         android:textSize="18sp"
-                        android:fontFamily="@font/worksans_variablefont_wght"
+                        android:fontFamily="@font/works_ans_v1"
                         android:textAllCaps="false"
                         android:layout_marginEnd="5dp"
                         android:paddingStart="15dp"
@@ -238,7 +241,8 @@
                             android:layout_height="40dp"
                             android:layout_centerInParent="true"
                             android:padding="7dp"
-                            tools:ignore="HardcodedText" />
+                            tools:ignore="HardcodedText"
+                            android:importantForAccessibility="no" />
 
                     </RelativeLayout>
 
@@ -256,7 +260,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="About"
-                    android:fontFamily="@font/worksans_variablefont_wght"
+                    android:fontFamily="@font/works_ans_v1"
                     android:textStyle="bold"
                     style="@style/TextColor"
                     android:textSize="20sp"
@@ -266,11 +270,10 @@
                     tools:ignore="HardcodedText"/>
 
                 <TextView
-                    android:id="@+id/about_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="i love dog, i love cat, i love horse, i love donkey, i love monkey, i love fox, i love ass"
-                    android:fontFamily="@font/worksans_variablefont_wght"
+                    android:fontFamily="@font/works_ans_v1"
                     style="@style/TextColor_v2"
                     android:textSize="17sp"
                     android:layout_marginStart="20dp"
@@ -287,7 +290,8 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:baselineAligned="false">
 
                 <RelativeLayout
                     android:id="@+id/btn_posts_user"
@@ -308,21 +312,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_gravity="center_horizontal">
+                            android:layout_gravity="center_horizontal"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 style="@style/posts_item_src"
                                 android:layout_gravity="center_vertical"
-                                android:layout_marginEnd="5dp"/>
+                                android:layout_marginEnd="5dp"
+                                android:importantForAccessibility="no" />
 
                             <TextView
-                                android:id="@+id/indicatorTextPosts"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Posts"
-                                android:fontFamily="@font/worksans_variablefont_wght"
+                                android:fontFamily="@font/works_ans_v1"
                                 android:textStyle="bold"
                                 style="@style/TextColor_v2"
                                 android:textSize="20sp"
@@ -336,7 +341,8 @@
                             android:layout_width="15dp"
                             android:layout_height="15dp"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"/>
+                            android:layout_marginTop="5dp"
+                            android:importantForAccessibility="no" />
 
                     </LinearLayout>
 
@@ -352,20 +358,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_gravity="center_horizontal">
+                            android:layout_gravity="center_horizontal"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 style="@style/posts_item_src"
                                 android:layout_gravity="center_vertical"
-                                android:layout_marginEnd="5dp"/>
+                                android:layout_marginEnd="5dp"
+                                android:importantForAccessibility="no" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Posts"
-                                android:fontFamily="@font/worksans_variablefont_wght"
+                                android:fontFamily="@font/works_ans_v1"
                                 android:textStyle="bold"
                                 style="@style/TextColor"
                                 android:textSize="20sp"
@@ -380,7 +388,8 @@
                             android:layout_height="15dp"
                             style="@style/dot_item_src"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"/>
+                            android:layout_marginTop="5dp"
+                            android:importantForAccessibility="no" />
 
                     </LinearLayout>
 
@@ -406,20 +415,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_gravity="center_horizontal">
+                            android:layout_gravity="center_horizontal"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 style="@style/replay_item_src"
                                 android:layout_gravity="center_vertical"
-                                android:layout_marginEnd="5dp"/>
+                                android:layout_marginEnd="5dp"
+                                android:importantForAccessibility="no" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Replies"
-                                android:fontFamily="@font/worksans_variablefont_wght"
+                                android:fontFamily="@font/works_ans_v1"
                                 android:textStyle="bold"
                                 style="@style/TextColor_v2"
                                 android:textSize="20sp"
@@ -433,7 +444,8 @@
                             android:layout_width="15dp"
                             android:layout_height="15dp"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"/>
+                            android:layout_marginTop="5dp"
+                            android:importantForAccessibility="no" />
 
                     </LinearLayout>
 
@@ -450,20 +462,22 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_gravity="center_horizontal">
+                            android:layout_gravity="center_horizontal"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 style="@style/replay_item_src"
                                 android:layout_gravity="center_vertical"
-                                android:layout_marginEnd="5dp"/>
+                                android:layout_marginEnd="5dp"
+                                android:importantForAccessibility="no" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Replies"
-                                android:fontFamily="@font/worksans_variablefont_wght"
+                                android:fontFamily="@font/works_ans_v1"
                                 android:textStyle="bold"
                                 style="@style/TextColor"
                                 android:textSize="20sp"
@@ -478,7 +492,8 @@
                             android:layout_height="15dp"
                             style="@style/dot_item_src"
                             android:layout_gravity="center_horizontal"
-                            android:layout_marginTop="5dp"/>
+                            android:layout_marginTop="5dp"
+                            android:importantForAccessibility="no" />
 
                     </LinearLayout>
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentsShowrActivity.SupportFragment">
+    tools:context=".fragmentsShowrActivity.SupportFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,16 +18,17 @@
             android:layout_marginTop="20dp">
 
             <ImageView
-                android:padding="7dp"
                 android:id="@+id/back_support_btn"
+                style="@style/back_arrow_src"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                style="@style/back_arrow_src"
-                android:contentDescription="back"
-                tools:ignore="HardcodedText"
-                android:layout_marginStart="20dp"
                 android:layout_centerVertical="true"
-                android:clickable="true"/>
+                android:layout_marginStart="20dp"
+                android:clickable="true"
+                android:contentDescription="back"
+                android:focusable="true"
+                android:padding="7dp"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -106,7 +107,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables,UselessParent">
 
                     <ImageView
                         style="@style/email_item_background"
@@ -145,7 +147,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_centerInParent="true">
+                    android:layout_centerInParent="true"
+                    tools:ignore="UseCompoundDrawables,UselessParent">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -183,7 +186,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_centerInParent="true">
+                    android:layout_centerInParent="true"
+                    tools:ignore="UseCompoundDrawables,UselessParent">
 
                     <ImageView
                         android:layout_width="50dp"
@@ -191,6 +195,7 @@
                         style="@style/feedback_item_background"
                         android:contentDescription="email"
                         tools:ignore="HardcodedText"
+                        android:layout_gravity="center_horizontal"
                         android:padding="5dp"/>
 
                     <TextView
@@ -206,119 +211,6 @@
                 </LinearLayout>
 
             </RelativeLayout>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@drawable/dot_green"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="10dp"
-                android:contentDescription="Qu"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="When will i receive my order?"
-                style="@style/TextColor"
-                android:textSize="20sp"
-                tools:ignore="HardcodedText" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@drawable/dot_green"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="10dp"
-                android:contentDescription="Qu"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="When will i receive my order?"
-                style="@style/TextColor"
-                android:textSize="20sp"
-                tools:ignore="HardcodedText" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@drawable/dot_green"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="10dp"
-                android:contentDescription="Qu"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="When will i receive my order?"
-                style="@style/TextColor"
-                android:textSize="20sp"
-                tools:ignore="HardcodedText" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:src="@drawable/dot_green"
-                android:layout_gravity="center_vertical"
-                android:layout_marginEnd="10dp"
-                android:contentDescription="Qu"
-                tools:ignore="HardcodedText" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="When will i receive my order?"
-                style="@style/TextColor"
-                android:textSize="20sp"
-                tools:ignore="HardcodedText" />
 
         </LinearLayout>
 

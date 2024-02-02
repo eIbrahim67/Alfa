@@ -5,10 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity.MainActivity"
+    tools:context=".mainActivity.MainActivity"
     style="@style/BackPage"
-    android:orientation="vertical"
-    android:id="@+id/main_activity_layout">
+    android:orientation="vertical">
 
     <FrameLayout
         android:id="@+id/frame_layout_ButtonBar"

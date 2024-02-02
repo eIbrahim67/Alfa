@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/unFollowBtnMenuPop"
-        android:title="Un follow this page"/>
+        android:title="Un follow this page"
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/blockBtnMenuPop"
-        android:title="Block this page"/>
+        android:title="Block this page"
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/ReportPostBtnMenuPop"
-        android:title="Report this post"/>
+        android:title="Report this post"
+        tools:ignore="HardcodedText" />
 
     <item
         android:id="@+id/ReportPageBtnMenuPop"
-        android:title="Report this page"/>
+        android:title="Report this page"
+        tools:ignore="HardcodedText" />
 </menu>

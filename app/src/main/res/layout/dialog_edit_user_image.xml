@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Image user account\n preview"
         android:textSize="23sp"
-        android:fontFamily="@font/worksans_variablefont_wght"
+        android:fontFamily="@font/works_ans_v1"
         style="@style/TextColor"
         android:textStyle="bold"
         android:paddingEnd="20dp"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="AccountName"
         android:textSize="18sp"
-        android:fontFamily="@font/worksans_variablefont_wght"
+        android:fontFamily="@font/works_ans_v1"
         style="@style/TextColor"
         android:textStyle="bold"
         android:paddingEnd="20dp"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:text="\@Username"
         android:textSize="18sp"
-        android:fontFamily="@font/worksans_variablefont_wght"
+        android:fontFamily="@font/works_ans_v1"
         style="@style/TextColor"
         android:textStyle="bold"
         android:gravity="center"
@@ -95,7 +95,7 @@
                 android:text="Update"
                 android:textSize="18sp"
                 android:textAllCaps="false"
-                android:fontFamily="@font/worksans_variablefont_wght"
+                android:fontFamily="@font/works_ans_v1"
                 android:textStyle="bold"
                 android:textColor="@color/white_v1"
                 android:paddingEnd="20dp"
@@ -111,7 +111,8 @@
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
                 android:background="@color/green_v1"
-                android:visibility="invisible"/>
+                android:visibility="invisible"
+                android:importantForAccessibility="no" />
 
         </androidx.cardview.widget.CardView>
 
@@ -135,7 +136,7 @@
                 android:textSize="18sp"
                 android:textAllCaps="false"
                 android:textColor="@color/white_v1"
-                android:fontFamily="@font/worksans_variablefont_wght"
+                android:fontFamily="@font/works_ans_v1"
                 android:textStyle="bold"
                 android:paddingEnd="20dp"
                 android:paddingStart="20dp"

@@ -2,7 +2,6 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/btnFilter"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginEnd="10dp"
@@ -23,9 +22,8 @@
             android:id="@+id/text_of_tage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New"
-            android:textSize="18dp"
-            android:fontFamily="@font/worksans_variablefont_wght"
+            android:textSize="18sp"
+            android:fontFamily="@font/works_ans_v1"
             android:textStyle="bold"
             android:clickable="true"
             android:focusable="true"

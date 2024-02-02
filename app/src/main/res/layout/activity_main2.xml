@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<merge
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentsShowrActivity.FragmentsViewerActivity"
-    style="@style/BackPage"
+    tools:context=".fragmentsShowrActivity.FragmentsViewerActivity"
     android:orientation="vertical"
-    android:id="@+id/container_MA2">
-
-
-
-</FrameLayout>
+    android:id="@+id/container_MA2"/>

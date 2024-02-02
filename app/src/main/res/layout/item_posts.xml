@@ -9,21 +9,22 @@
     android:clickable="true"
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
-    android:layout_marginBottom="10dp">
+    android:layout_marginBottom="10dp"
+    android:focusable="true">
 
     <ImageView
         android:id="@+id/post_edit"
+        style="@style/more_vertical_src"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:padding="5dp"
-        style="@style/more_vertical_src"
         android:layout_alignParentEnd="true"
-        android:contentDescription="more"
-        tools:ignore="HardcodedText"
-        android:clickable="true"
-        android:focusable="true"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginTop="10dp"/>
+        android:clickable="true"
+        android:contentDescription="more"
+        android:focusable="true"
+        android:padding="5dp"
+        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,14 +33,16 @@
 
         <RelativeLayout
             android:id="@+id/edit_image_user"
+            style="@style/user_image_background_src"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/user_image_background_src"
-            android:clickable="true"
-            android:padding="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp">
+            android:layout_marginEnd="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="5dp"
+            tools:ignore="SpeakableTextPresentCheck">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/pup_img"
@@ -47,7 +50,7 @@
                 android:layout_height="50dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/roundedImageViewUser"/>
+                app:shapeAppearanceOverlay="@style/roundedImageViewUser" />
 
         </RelativeLayout>
 
@@ -66,7 +69,8 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="UselessParent">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -78,7 +82,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="17sp"
-                            android:fontFamily="@font/worksans_variablefont_wght"
+                            android:fontFamily="@font/works_ans_v1"
                             android:textStyle="bold"
                             android:text=""
                             style="@style/TextColor"
@@ -120,7 +124,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
-                        android:fontFamily="@font/worksans_variablefont_wght"
+                        android:fontFamily="@font/works_ans_v1"
                         android:text=""
                         style="@style/TextColor_v2"
                         tools:ignore="HardcodedText"
@@ -155,7 +159,8 @@
                 app:shapeAppearanceOverlay="@style/roundedImageViewPost"
                 android:clickable="true"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="5dp"
+                android:focusable="true" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,27 +172,29 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    tools:ignore="UselessParent">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_centerInParent="true"
-                        android:layout_marginEnd="10dp">
+                        android:layout_marginEnd="10dp"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:id="@+id/comment_btn"
                             style="@style/ripple_post_reaction"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:importantForAccessibility="no"
                             android:padding="5dp"
-                            android:src="@drawable/comment" />
+                            android:src="@drawable/comment"
+                            tools:ignore="ImageContrastCheck" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
                             style="@style/TextColor"
                             android:layout_gravity="center_vertical"/>
 
@@ -197,22 +204,23 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_centerInParent="true"
-                        android:layout_marginEnd="10dp">
+                        android:layout_marginEnd="10dp"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:id="@+id/like_btn"
                             style="@style/ripple_post_reaction"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:importantForAccessibility="no"
                             android:padding="5dp"
-                            android:src="@drawable/love" />
+                            android:src="@drawable/love"
+                            tools:ignore="ImageContrastCheck" />
 
                         <TextView
                             android:id="@+id/like_num"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
                             style="@style/TextColor"
                             android:layout_gravity="center_vertical"/>
 
@@ -222,21 +230,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_centerInParent="true">
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:id="@+id/share_btn"
                             style="@style/ripple_post_reaction"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:importantForAccessibility="no"
                             android:padding="5dp"
-                            android:src="@drawable/share" />
+                            android:src="@drawable/share"
+                            tools:ignore="ImageContrastCheck" />
 
                         <TextView
-                            android:id="@+id/share_num"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
                             style="@style/TextColor"
                             android:layout_gravity="center_vertical"
                             android:visibility="gone"/>
@@ -252,21 +260,22 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
                             android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="10dp">
+                            android:layout_marginEnd="10dp"
+                            tools:ignore="UseCompoundDrawables">
 
                             <ImageView
                                 android:id="@+id/bookmark_btn"
                                 style="@style/ripple_post_reaction"
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
+                                android:importantForAccessibility="no"
                                 android:padding="5dp"
-                                android:src="@drawable/bookmark" />
+                                android:src="@drawable/bookmark"
+                                tools:ignore="ImageContrastCheck" />
 
                             <TextView
-                                android:id="@+id/bookmark_num"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="0"
                                 style="@style/TextColor"
                                 android:layout_gravity="center_vertical"
                                 android:visibility="gone"/>

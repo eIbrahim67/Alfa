@@ -2,22 +2,22 @@
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/home_btn"
+    <item
         android:title=""
         android:icon="@drawable/home"
         tools:ignore="HardcodedText" />
 
-    <item android:id="@+id/researcher_btn"
+    <item
         android:title=""
         android:icon="@drawable/search_light"
         tools:ignore="HardcodedText" />
 
-    <item android:id="@+id/chats_btn"
+    <item
         android:title=""
         android:icon="@drawable/chats_icon_black"
         tools:ignore="HardcodedText" />
 
-    <item android:id="@+id/profile_btn"
+    <item
         android:title=""
         android:icon="@drawable/profile"
         tools:ignore="HardcodedText" />

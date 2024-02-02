@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentsShowrActivity.EditPersonalDataFragment"
+    tools:context=".fragmentsShowrActivity.EditPersonalDataFragment"
     style="@style/BackPage">
 
     <LinearLayout
@@ -19,16 +18,17 @@
             android:layout_marginTop="20dp">
 
             <ImageView
-                android:padding="7dp"
                 android:id="@+id/back_personal_btn"
+                style="@style/back_arrow_src"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                style="@style/back_arrow_src"
-                android:contentDescription="back"
-                tools:ignore="HardcodedText"
-                android:layout_marginStart="20dp"
                 android:layout_centerVertical="true"
-                android:clickable="true"/>
+                android:layout_marginStart="20dp"
+                android:clickable="true"
+                android:contentDescription="back"
+                android:focusable="true"
+                android:padding="7dp"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -57,18 +57,20 @@
 
         <EditText
             android:id="@+id/name_user_edit"
+            style="@style/input_data_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/input_data_background"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:autofillHints=""
             android:hint="null"
-            tools:ignore="HardcodedText"
+            android:inputType="text"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp"/>
+            android:paddingTop="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
+            tools:ignore="HardcodedText,DuplicateSpeakableTextCheck" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -93,7 +95,9 @@
             android:hint="null"
             tools:ignore="HardcodedText"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp"/>
+            android:paddingEnd="20dp"
+            android:autofillHints=""
+            android:inputType="text"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -118,7 +122,10 @@
             android:hint="null"
             tools:ignore="HardcodedText"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp" />
+            android:paddingEnd="20dp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:autofillHints="" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -131,7 +138,6 @@
             android:layout_marginTop="20dp"/>
 
         <EditText
-            android:id="@+id/email_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/input_data_background"
@@ -170,7 +176,10 @@
             android:hint="null"
             tools:ignore="HardcodedText"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp" />
+            android:paddingEnd="20dp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:autofillHints="" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -195,7 +204,9 @@
             android:hint="null"
             tools:ignore="HardcodedText"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp" />
+            android:paddingEnd="20dp"
+            android:autofillHints=""
+            android:inputType="phone" />
 
         <Button
             android:id="@+id/save_btn"

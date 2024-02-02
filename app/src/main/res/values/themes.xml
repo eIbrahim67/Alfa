@@ -1,5 +1,5 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<resources >
+
     <style name="Base.Theme.Alfa" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="android:statusBarColor">@color/white_v1</item>
@@ -18,12 +18,6 @@
 
         <item name="android:textColor">@color/black_v1</item>
         <item name="android:textColorHint">@color/black_v2</item>
-    </style>
-
-    <style name="setting_language_src">
-
-        <item name="android:src">@drawable/setting_language_light</item>
-
     </style>
 
     <style name="search_background_src">
@@ -52,94 +46,6 @@
 
         <item name="android:background">@drawable/outline_light</item>
         <item name="android:src">@drawable/profile_light</item>
-
-    </style>
-
-
-
-    <style name="fav_background_src">
-
-        <item name="android:background">@drawable/fav_background_light</item>
-
-    </style>
-
-    <style name="more_src">
-
-        <item name="android:src">@drawable/more_light</item>
-
-    </style>
-
-    <style name="coin_src">
-
-        <item name="android:src">@drawable/coin_light</item>
-
-    </style>
-
-    <style name="coin_background_src">
-
-        <item name="android:background">@drawable/coins_background_light</item>
-
-    </style>
-
-    <style name="lead_one_background_src">
-
-        <item name="android:background">@drawable/lead_one_background_light</item>
-
-    </style>
-
-    <style name="lead_two_background_src">
-
-        <item name="android:background">@drawable/lead_two_background_light</item>
-
-    </style>
-
-    <style name="lead_three_background_src">
-
-        <item name="android:background">@drawable/lead_three_background_light</item>
-
-    </style>
-
-    <style name="lead_circle_one_background_src">
-
-        <item name="android:background">@drawable/lead_one_circle_light</item>
-
-    </style>
-
-    <style name="lead_circle_two_background_src">
-
-        <item name="android:background">@drawable/lead_two_circle_light</item>
-
-    </style>
-
-    <style name="lead_circle_three_background_src">
-
-        <item name="android:background">@drawable/lead_three_circle_light</item>
-
-    </style>
-
-    <style name="btn_background_src_v1">
-
-        <item name="android:background">@drawable/bottom_background_light</item>
-
-    </style>
-
-    <style name="user_image_src">
-
-        <item name="android:background">@drawable/league_img_background_light</item>
-        <item name="android:src">@drawable/profile_light</item>
-
-    </style>
-
-    <style name="userPup_image_src">
-
-        <item name="android:background">@drawable/league_img_background_light</item>
-
-    </style>
-
-    <style name="league_btn_background_src">
-
-        <item name="android:textColor">@color/black_v1</item>
-        <item name="android:background">@drawable/bottom_background_light</item>
 
     </style>
 
@@ -245,30 +151,6 @@
     </style>
 
 
-    <style name="outline_src">
-
-        <item name="android:background">@drawable/outline_light</item>
-
-    </style>
-
-    <style name="facebook_src">
-
-        <item name="android:background">@drawable/facebook_light</item>
-
-    </style>
-
-    <style name="google_src">
-
-        <item name="android:background">@drawable/google_light</item>
-
-    </style>
-
-    <style name="github_src">
-
-        <item name="android:background">@drawable/github_light</item>
-
-    </style>
-
     <style name="roundedImageViewUser" parent="">
 
         <item name="cornerFamily">rounded</item>
@@ -292,14 +174,6 @@
 
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">40dp</item>
-        <item name="color">@color/white_v1</item>
-
-    </style>
-
-    <style name="roundedImageViewAddPost" parent="">
-
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">10dp</item>
         <item name="color">@color/white_v1</item>
 
     </style>
@@ -333,8 +207,8 @@
 
     <style name="TextColor_v2">
 
-        <item name="android:textColor">@color/gray_v3</item>
-        <item name="android:textColorHint">@color/gray_v3</item>
+        <item name="android:textColor">@color/gray_v6</item>
+        <item name="android:textColorHint">@color/gray_v6</item>
 
     </style>
 
@@ -350,22 +224,9 @@
 
     </style>
 
-    <style name="edit_background_src_v2">
-
-        <item name="android:src">@drawable/edit_icon_white</item>
-        <item name="android:background">@drawable/circle_ripple_post_reaction_dark</item>
-
-    </style>
-
     <style name="edit_item_src_v2">
 
         <item name="android:src">@drawable/edit_icon_black</item>
-
-    </style>
-
-    <style name="add_image_backgroun_src">
-
-        <item name="android:background">@color/gray_v5</item>
 
     </style>
 
@@ -417,7 +278,7 @@
         <item name="cornerFamily">rounded</item>
     </style>
 
-    <style name="delete_bacground_src">
+    <style name="delete_background_src">
 
         <item name="android:src">@drawable/delete_icon_white</item>
         <item name="android:background">@drawable/user_img_background_dark</item>
@@ -483,12 +344,6 @@
 
     </style>
 
-    <style name="community_item_src">
-
-        <item name="android:src">@drawable/community_light</item>
-
-    </style>
-
     <style name="faqs_item_src">
 
         <item name="android:src">@drawable/faqs_light</item>
@@ -504,12 +359,6 @@
     <style name="bookmark_item_src">
 
         <item name="android:src">@drawable/bookmark_light</item>
-
-    </style>
-
-    <style name="profile_item_src">
-
-        <item name="android:src">@drawable/profile_light</item>
 
     </style>
 
