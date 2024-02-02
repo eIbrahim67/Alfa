@@ -37,6 +37,7 @@ import com.squareup.picasso.Picasso
 
 lateinit var Uri : Uri
 
+@Suppress("DEPRECATION")
 class ProfileFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
@@ -53,7 +54,6 @@ class ProfileFragment : Fragment() {
     private lateinit var listDataRecyclerView : ArrayList<ReadDataPosts>
     private lateinit var adapter : AdapterRecycleViewPosts
     private lateinit var uid : String
-    private lateinit var arrPosts : List<String>
     private lateinit var addPostBtn : Button
     private lateinit var editImageUser : RelativeLayout
     private lateinit var btnSettings : RelativeLayout
@@ -196,12 +196,12 @@ class ProfileFragment : Fragment() {
         firestoreDb.collection("Users").document(uid)
             .get().addOnSuccessListener { documentSnapshot ->
                 if (documentSnapshot.exists()) {
-                    arrPosts = documentSnapshot.get("postsId") as List<String>
+                    val arrPosts = documentSnapshot.get("postsId") as List<*>
 
                     val postFetchTasks = ArrayList<Task<DocumentSnapshot>>()
                     noPosts.text = arrPosts.size.toString()
                     for (postId in arrPosts) {
-                        val postFetchTask = firestoreDb.collection("posts").document(postId).get()
+                        val postFetchTask = firestoreDb.collection("posts").document(postId.toString()).get()
                         postFetchTasks.add(postFetchTask)
                     }
 
@@ -244,12 +244,12 @@ class ProfileFragment : Fragment() {
         firestore.collection("Users").document(uid)
             .get().addOnSuccessListener { documentSnapshot ->
                 if (documentSnapshot.exists()) {
-                    arrPosts = documentSnapshot.get("repliesId") as List<String>
+                    val arrPosts = documentSnapshot.get("repliesId") as List<*>
 
                     val postFetchTasks = ArrayList<Task<DocumentSnapshot>>()
                     //noPosts.text = arrPosts.size.toString()
                     for (postId in arrPosts) {
-                        val postFetchTask = firestore.collection("replies").document(postId).get()
+                        val postFetchTask = firestore.collection("replies").document(postId.toString()).get()
                         postFetchTasks.add(postFetchTask)
                     }
 

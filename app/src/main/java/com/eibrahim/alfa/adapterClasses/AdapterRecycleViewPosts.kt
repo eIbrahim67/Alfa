@@ -119,7 +119,7 @@ class AdapterRecycleViewPosts(
             postCurrentId = post.postId.toString()
 
             val documentRefPosts = firestore.collection("postsLikes").document(postCurrentId)
-            var likeNumText = ""
+            val likeNumText: String
             if(post.isLoved!!){
                 holder.likeBtn.setImageResource(R.drawable.love)
                 likeNumText = (holder.likeNum.text.toString().toInt() - 1).toString()

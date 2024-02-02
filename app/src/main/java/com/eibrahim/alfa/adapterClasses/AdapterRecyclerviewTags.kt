@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.eibrahim.alfa.R
 
+@Suppress("DEPRECATION")
 class AdapterRecyclerviewTags(private var listOfData: ArrayList<String>, private var context : Context)
     : RecyclerView.Adapter<TagViewHolder>() {
 
