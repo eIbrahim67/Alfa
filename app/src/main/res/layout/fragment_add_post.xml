@@ -346,100 +346,100 @@
         </RelativeLayout>
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:baselineAligned="false">
-
-            <RelativeLayout
-                android:id="@+id/upload_photo"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/background_add_photo"
-                android:layout_marginEnd="10dp"
-                android:clickable="true"
-                android:focusable="true">
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:baselineAligned="false">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_centerInParent="true"
-                    tools:ignore="UseCompoundDrawables,UselessParent">
+                <RelativeLayout
+                    android:id="@+id/upload_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_add_photo"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true"
+                    android:focusable="true">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/pictures_icon_gray"
-                        android:layout_gravity="center"
-                        android:contentDescription="upload"
-                        tools:ignore="HardcodedText" />
-
-                    <TextView
-                        style="@style/TextColor_v2"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:fontFamily="@font/works_ans_v1"
-                        android:text="Upload a photo"
-                        android:textColor="@color/gray_v7"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+                        android:orientation="vertical"
+                        android:layout_centerInParent="true"
+                        tools:ignore="UseCompoundDrawables,UselessParent">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/pictures_icon_gray"
+                            android:layout_gravity="center"
+                            android:contentDescription="upload"
+                            tools:ignore="HardcodedText" />
 
-            </RelativeLayout>
+                        <TextView
+                            style="@style/TextColor_v2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/works_ans_v1"
+                            android:text="Upload a photo"
+                            android:textColor="@color/gray_v7"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/background_add_photo"
-                android:layout_marginStart="10dp">
+                    </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_centerInParent="true"
-                    tools:ignore="UseCompoundDrawables,UselessParent">
+                </RelativeLayout>
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:src="@drawable/camera_icon_gray"
-                        android:layout_gravity="center"
-                        android:contentDescription="take a photo"
-                        tools:ignore="HardcodedText" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_add_photo"
+                    android:layout_marginStart="10dp">
 
-                    <TextView
-                        style="@style/TextColor_v2"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:fontFamily="@font/works_ans_v1"
-                        android:text="Take a photo"
-                        android:textColor="@color/gray_v7"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+                        android:orientation="vertical"
+                        android:layout_centerInParent="true"
+                        tools:ignore="UseCompoundDrawables,UselessParent">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/camera_icon_gray"
+                            android:layout_gravity="center"
+                            android:contentDescription="take a photo"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            style="@style/TextColor_v2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:fontFamily="@font/works_ans_v1"
+                            android:text="Take a photo"
+                            android:textColor="@color/gray_v7"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                    </LinearLayout>
 
 
-            </RelativeLayout>
+                </RelativeLayout>
 
-        </LinearLayout>
+            </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"

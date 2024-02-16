@@ -15,6 +15,7 @@ data class UserAdminData(
     var webSite : String? = null,
 
     var whatsApp : String? = null,
+    var about : String? = null,
 
     var postsBookmarks : List<String>? = emptyList(),
     var postsId : List<String>? = emptyList()

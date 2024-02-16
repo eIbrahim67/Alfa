@@ -80,12 +80,18 @@ class AdapterRecycleViewPosts(
 
         holder.userName.text = post.userId?.userName.toString()
 
+        val tempImage = "https://firebasestorage.googleapis.com/v0/b/alfa-ed1e3.appspot.com/o/images%2Ffetrah.jpg?alt=media&token=3f776698-48e5-4ed8-897f-f42cbefffa27"
+
         if(post.userId?.imgAccount != null)
-            Picasso.get().load(post.userId?.imgAccount).into(holder.imagePup)
+            Picasso.get()
+                .load(post.userId?.imgAccount)
+                .placeholder(R.drawable.loading_image_light)
+                .into(holder.imagePup)
         else
-            Picasso.get().load(
-                "https://firebasestorage.googleapis.com/v0/b/alfa-ed1e3.appspot.com/o/images%2Ffetrah.jpg?alt=media&token=3f776698-48e5-4ed8-897f-f42cbefffa27"
-            ).into(holder.imagePup)
+            Picasso.get()
+                .load(tempImage)
+                .placeholder(R.drawable.loading_image_light)
+                .into(holder.imagePup)
 
         holder.namePup.text = post.userId?.name.toString()
 
@@ -93,7 +99,10 @@ class AdapterRecycleViewPosts(
 
         holder.postText.text = post.postText.toString()
 
-        Picasso.get().load(post.imageUrl).into(holder.postImg)
+        Picasso.get()
+            .load(post.imageUrl)
+            .placeholder(R.drawable.loading_image_light)
+            .into(holder.postImg)
 
         val intent = Intent(context, FragmentsViewerActivity::class.java)
 
@@ -279,7 +288,6 @@ class AdapterRecycleViewPosts(
                                 documentRefPost.delete()
                                     .addOnSuccessListener{
 
-                                        documentRefUser.update("noPosts", FieldValue.increment(-1))
                                         documentRefUser.update("postsId", FieldValue.arrayRemove(postCurrentId))
 
                                         val adapterPosition = holder.adapterPosition

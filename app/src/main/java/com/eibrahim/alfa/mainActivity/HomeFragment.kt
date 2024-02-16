@@ -15,6 +15,7 @@ import com.eibrahim.alfa.adapterClasses.AdapterRecycleViewPosts
 import com.eibrahim.alfa.dataClasses.ReadDataPosts
 import com.eibrahim.alfa.declaredClasses.DeclareDataUsers
 import com.eibrahim.alfa.R
+import com.eibrahim.alfa.adapterClasses.AdapterRecyclerviewStories
 import com.eibrahim.alfa.sign.SigninActivity
 import com.eibrahim.alfa.dataClasses.UserAdminData
 import com.google.firebase.auth.FirebaseAuth
@@ -42,7 +43,7 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val Root = inflater.inflate(R.layout.fragment_home, container, false)
+        val root = inflater.inflate(R.layout.fragment_home, container, false)
 
         firestore = FirebaseFirestore.getInstance()
 
@@ -58,9 +59,18 @@ class HomeFragment : Fragment() {
             requireActivity().finish()
         }
 
+        val dataList : List<String> = listOf("1","1","1","1","1","1","1")
 
-        recyclerView = Root.findViewById(R.id.recyclerview_posts)
-        swipeRefreshLayout = Root.findViewById(R.id.fragment_home)
+        val recyclerViewStories :RecyclerView = root.findViewById(R.id.recyclerview_stories)
+
+        val adapterStories = AdapterRecyclerviewStories(dataList, requireContext())
+
+        recyclerViewStories.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+        recyclerViewStories.adapter = adapterStories
+
+        recyclerView = root.findViewById(R.id.recyclerview_posts)
+        swipeRefreshLayout = root.findViewById(R.id.fragment_home)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
 
@@ -74,7 +84,7 @@ class HomeFragment : Fragment() {
 
         }
 
-        return Root
+        return root
     }
 
 

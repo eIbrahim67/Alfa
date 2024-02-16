@@ -26,9 +26,24 @@
 
     </style>
 
+    <style name="search_icon_with_circle_stroke_src">
+
+        <item name="android:src">@drawable/search_light</item>
+        <item name="android:background">@drawable/circle_stroke_black</item>
+
+    </style>
+
     <style name="search_icon_src">
 
-        <item name="android:background">@drawable/search_light</item>
+        <item name="android:src">@drawable/search_light</item>
+
+    </style>
+
+    <style name="more_icon_with_circle_stroke_src">
+
+        <item name="android:background">@drawable/circle_stroke_black</item>
+        <item name="android:src">@drawable/more_vertical_light</item>
+
 
     </style>
 
@@ -209,6 +224,13 @@
 
         <item name="android:textColor">@color/gray_v6</item>
         <item name="android:textColorHint">@color/gray_v6</item>
+
+    </style>
+
+    <style name="TextColor_v3">
+
+        <item name="android:textColor">@color/gray_v4</item>
+        <item name="android:textColorHint">@color/gray_v4</item>
 
     </style>
 

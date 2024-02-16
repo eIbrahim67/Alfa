@@ -195,12 +195,6 @@ class AddPostFragment : Fragment() {
                 .addOnFailureListener { e ->
                 }
 
-            documentRecUsers.update("noPosts", FieldValue.increment(1))
-                .addOnSuccessListener {
-                }
-                .addOnFailureListener { e ->
-                }
-
             documentRecPosts.set(dataPost)
                 .addOnSuccessListener {
 

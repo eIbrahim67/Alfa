@@ -31,6 +31,7 @@ class DeclareDataUsers {
                             webSite = data["webSite"] as? String,
                             gender = data["gender"] as? String,
                             whatsApp = data["whatsApp"] as? String,
+                            about = data["about"] as? String,
                             postsId = data["postsId"] as? List<String>,
                             postsBookmarks = data["postsBookmarks"] as? List<String>
                         )

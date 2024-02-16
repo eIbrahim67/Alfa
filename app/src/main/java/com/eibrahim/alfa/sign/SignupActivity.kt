@@ -113,7 +113,8 @@ class SignupActivity : AppCompatActivity() {
             gender, imageAccUrlTemp,
             fnameTxt.text.toString(), null,
 
-            usernameSignup.text.toString(), null, null,
+            usernameSignup.text.toString(),
+            null, null, null,
             emptyList(), emptyList()
 
         )

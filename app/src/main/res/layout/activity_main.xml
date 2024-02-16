@@ -19,8 +19,6 @@
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         app:iconSize="30dp"
         style="@style/Button_bar_style"
         app:indicatorRadius="1000dp"
