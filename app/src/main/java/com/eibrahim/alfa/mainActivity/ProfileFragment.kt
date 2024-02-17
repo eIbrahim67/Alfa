@@ -105,10 +105,12 @@ class ProfileFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
+        val tempText = "Follow"
+
         if (myAccount){
             uid = auth.currentUser?.uid.toString()
         }else{
-            addPostBtn.text = "Follow"
+            addPostBtn.text = tempText
             btnSettings.visibility = View.GONE
             btnMessage.visibility = View.VISIBLE
             uid = ShowedUserAccount
@@ -206,8 +208,6 @@ class ProfileFragment : Fragment() {
     private fun eventChangeListerPosts() {
         firestoreDb = FirebaseFirestore.getInstance()
         firestore = FirebaseFirestore.getInstance()
-        val auth = FirebaseAuth.getInstance()
-        //uid = auth.currentUser?.uid.toString()
         listDataRecyclerView = arrayListOf()
 
         firestoreDb.collection("Users").document(uid)
@@ -269,8 +269,6 @@ class ProfileFragment : Fragment() {
 
     private fun eventChangeListerReplies() {
         firestore = FirebaseFirestore.getInstance()
-        val auth = FirebaseAuth.getInstance()
-        //uid = auth.currentUser?.uid.toString()
         listDataRecyclerView = arrayListOf()
 
         firestore.collection("Users").document(uid)
