@@ -384,7 +384,7 @@ class AdapterRecycleViewPosts(
         val timeText: TextView = itemView.findViewById(R.id.time_text)
         //val editPup: ImageView = itemView.findViewById(R.id.pup_edit)
         //val dislikeBtn: ImageView = itemView.findViewById(R.id.dislike_btn)
-        val commentBtn: ImageView = itemView.findViewById(R.id.comment_btn)
+        //val commentBtn: ImageView = itemView.findViewById(R.id.comment_btn)
         val likeBtn: ImageView = itemView.findViewById(R.id.like_btn)
         val bookmarkBtn: ImageView = itemView.findViewById(R.id.bookmark_btn)
         val shareBtn: ImageView = itemView.findViewById(R.id.share_btn)

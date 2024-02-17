@@ -12,7 +12,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -109,7 +108,7 @@ class ProfileFragment : Fragment() {
         if (myAccount){
             uid = auth.currentUser?.uid.toString()
         }else{
-            addPostBtn.setText("Follow")
+            addPostBtn.text = "Follow"
             btnSettings.visibility = View.GONE
             btnMessage.visibility = View.VISIBLE
             uid = ShowedUserAccount
