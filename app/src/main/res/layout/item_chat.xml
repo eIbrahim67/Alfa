@@ -9,12 +9,12 @@
     android:orientation="horizontal"
     android:focusable="true"
     android:paddingTop="5dp"
-    android:paddingStart="10dp"
     android:paddingBottom="5dp"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
     android:layout_marginTop="5dp"
-    android:layout_marginBottom="5dp">
+    android:layout_marginBottom="5dp"
+    android:baselineAligned="false">
 
     <RelativeLayout
         android:id="@+id/edit_image_user"
@@ -62,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="17sp"
-            android:text="المشطشط يتحدث"
+            android:text="typing...."
             android:fontFamily="@font/works_ans_v1"
             style="@style/TextColor_v2"
             android:layout_gravity="center_vertical"
@@ -83,14 +83,13 @@
             android:textSize="15sp"
             android:fontFamily="@font/works_ans_v1"
             style="@style/TextColor"
-            android:text="12:4 pm"
+            android:text="12:40 pm"
             android:textStyle="bold"
             android:layout_marginBottom="5dp"
             tools:ignore="HardcodedText,SmallSp"
             android:gravity="center_vertical"/>
 
         <TextView
-            android:id="@+id/counter_text"
 
             android:layout_width="25dp"
             android:layout_height="25dp"

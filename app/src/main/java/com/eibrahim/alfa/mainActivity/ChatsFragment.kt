@@ -1,15 +1,14 @@
 package com.eibrahim.alfa.mainActivity
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.eibrahim.alfa.R
 import com.eibrahim.alfa.adapterClasses.AdapterRecyclerviewChats
-import com.eibrahim.alfa.adapterClasses.AdapterRecyclerviewStories
 
 
 class ChatsFragment : Fragment() {
@@ -25,9 +24,9 @@ class ChatsFragment : Fragment() {
         val recyclerViewChats :RecyclerView = root.findViewById(R.id.recyclerview_chats)
 
 
-        val dataList : List<String> = listOf("1","1","1","1","1","1","1")
+        val dataList : List<String> = listOf("1","2","3","4","5","6","7","5","6","7","5","6","7")
 
-        val adapterChats = AdapterRecyclerviewChats(dataList, requireContext())
+        val adapterChats = AdapterRecyclerviewChats(dataList)
 
         recyclerViewChats.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 

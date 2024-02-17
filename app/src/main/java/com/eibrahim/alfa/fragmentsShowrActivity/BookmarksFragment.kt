@@ -1,5 +1,6 @@
 package com.eibrahim.alfa.fragmentsShowrActivity
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -117,6 +118,7 @@ class BookmarksFragment : Fragment() {
         rv.adapter = adapter
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun fetchUserDataAndUpdateItem(item: ReadDataPosts) {
         if (item.userId?.id == null)
             return
@@ -134,7 +136,7 @@ class BookmarksFragment : Fragment() {
                     }
                 }
                 listDataRecyclerView.add(item)
-                //adapter.notifyDataSetChanged()
+                adapter.notifyDataSetChanged()
             }
             .addOnFailureListener { e ->
                 Log.e("Firestore Error", "Failed to fetch user data: ${e.message}")

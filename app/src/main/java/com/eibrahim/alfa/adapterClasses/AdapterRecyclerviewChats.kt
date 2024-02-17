@@ -1,17 +1,12 @@
 package com.eibrahim.alfa.adapterClasses
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Space
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.eibrahim.alfa.R
 
-@Suppress("DEPRECATION")
-class AdapterRecyclerviewChats(private var listOfData: List<String>, private var context : Context)
+class AdapterRecyclerviewChats(private var listOfData: List<String>)
     : RecyclerView.Adapter<ChatViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
@@ -29,12 +24,7 @@ class AdapterRecyclerviewChats(private var listOfData: List<String>, private var
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
 
-
     }
 }
 
-class ChatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-
-
-}
+class ChatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

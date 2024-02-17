@@ -24,27 +24,12 @@
 
     </style>
 
-    <style name="search_icon_with_circle_stroke_src">
-
-        <item name="android:background">@drawable/circle_stroke_white</item>
-        <item name="android:src">@drawable/search_dark</item>
-
-    </style>
-
     <style name="search_icon_src">
 
         <item name="android:src">@drawable/search_dark</item>
 
     </style>
 
-
-    <style name="more_icon_with_circle_stroke_src">
-
-        <item name="android:background">@drawable/circle_stroke_white</item>
-        <item name="android:src">@drawable/more_vertical_dark</item>
-
-
-    </style>
 
     <style name="Button_bar_style">
 
@@ -260,11 +245,6 @@
 
     </style>
 
-    <style name="rounded_corner_stroke_main_src">
-
-        <item name="android:background">@drawable/rounded_corner_stroke_main</item>
-
-    </style>
 
     <style name="btn_background_main_src">
         <item name="android:background">@drawable/btn_rounded_background_lightsea</item>

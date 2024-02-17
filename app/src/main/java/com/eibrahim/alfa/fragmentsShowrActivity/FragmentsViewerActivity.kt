@@ -8,8 +8,10 @@ import com.eibrahim.alfa.postFragments.ShowImageFragment
 import com.eibrahim.alfa.postFragments.ShowPostFragment
 import com.eibrahim.alfa.R
 
-var no_page : Int = 0
+var no_page : Int? = null
 var ShowedImageUrl : String = ""
+var ShowedUserAccount : String = ""
+var myAccount : Boolean = true
 
 class FragmentsViewerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +21,6 @@ class FragmentsViewerActivity : AppCompatActivity() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         val ProfileFragment = ProfileFragment()
-        val SettingsFragment = SettingsFragment()
         val BookmarksFragment = BookmarksFragment()
         val SupportFragment = SupportFragment()
         val CommunityFragment = CommunityFragment()
@@ -34,7 +35,7 @@ class FragmentsViewerActivity : AppCompatActivity() {
 
         when (no_page) {
             0 -> fragmentTransaction.replace(R.id.container_MA2, ProfileFragment)
-            1 -> fragmentTransaction.replace(R.id.container_MA2, SettingsFragment)
+            //1 -> fragmentTransaction.replace(R.id.container_MA2, SettingsFragment)
             2 -> fragmentTransaction.replace(R.id.container_MA2, BookmarksFragment)
             3 -> fragmentTransaction.replace(R.id.container_MA2, SupportFragment)
             4 -> fragmentTransaction.replace(R.id.container_MA2, CommunityFragment)

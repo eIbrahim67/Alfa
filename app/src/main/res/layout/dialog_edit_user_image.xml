@@ -105,14 +105,14 @@
                 android:focusable="true"
                 tools:ignore="HardcodedText"/>
 
-            <ImageView
-                android:id="@+id/loading_update_image"
+            <ProgressBar
+                android:id="@+id/progressBar_edit_user_image"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_centerInParent="true"
-                android:background="@color/green_v1"
-                android:visibility="invisible"
-                android:importantForAccessibility="no" />
+                android:backgroundTint="@color/black_v1"
+                android:visibility="gone"/>
+
 
         </androidx.cardview.widget.CardView>
 

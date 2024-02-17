@@ -4,6 +4,7 @@
 
         <item name="android:statusBarColor">@color/white_v1</item>
         <item name="android:windowLightStatusBar">true</item>
+
     </style>
 
     <style name="Theme.Alfa" parent="Base.Theme.Alfa" />
@@ -26,24 +27,9 @@
 
     </style>
 
-    <style name="search_icon_with_circle_stroke_src">
-
-        <item name="android:src">@drawable/search_light</item>
-        <item name="android:background">@drawable/circle_stroke_black</item>
-
-    </style>
-
     <style name="search_icon_src">
 
         <item name="android:src">@drawable/search_light</item>
-
-    </style>
-
-    <style name="more_icon_with_circle_stroke_src">
-
-        <item name="android:background">@drawable/circle_stroke_black</item>
-        <item name="android:src">@drawable/more_vertical_light</item>
-
 
     </style>
 
@@ -87,6 +73,22 @@
     <style name="settings_item_src">
 
         <item name="android:src">@drawable/settings_main</item>
+        <item name="android:background">@drawable/rounded_corner_stroke_main</item>
+
+    </style>
+
+
+
+    <style name="rounded_corner_stroke_main_src">
+
+        <item name="android:background">@drawable/rounded_corner_stroke_main</item>
+
+    </style>
+
+    <style name="message_item_src">
+
+        <item name="android:src">@drawable/chats_icon_main</item>
+        <item name="android:background">@drawable/rounded_corner_stroke_main</item>
 
     </style>
 
@@ -227,13 +229,6 @@
 
     </style>
 
-    <style name="TextColor_v3">
-
-        <item name="android:textColor">@color/gray_v4</item>
-        <item name="android:textColorHint">@color/gray_v4</item>
-
-    </style>
-
     <style name="checkout_background_btn">
         <item name="android:background">@drawable/btn_rounded_background_black</item>
         <item name="android:textColor">@color/white_v1</item>
@@ -250,54 +245,6 @@
 
         <item name="android:src">@drawable/edit_icon_black</item>
 
-    </style>
-
-    <style name="roundedImageViewTopRightBottomRight" parent="">
-        <item name="cornerSizeTopRight">8dp</item>
-        <item name="cornerSizeTopLeft">0dp</item>
-        <item name="cornerSizeBottomLeft">0dp</item>
-        <item name="cornerSizeBottomRight">8dp</item>
-        <item name="cornerFamily">rounded</item>
-    </style>
-
-    <style name="roundedImageViewTopLeftBottomLeft" parent="">
-        <item name="cornerSizeTopRight">0dp</item>
-        <item name="cornerSizeTopLeft">8dp</item>
-        <item name="cornerSizeBottomLeft">8dp</item>
-        <item name="cornerSizeBottomRight">0dp</item>
-        <item name="cornerFamily">rounded</item>
-    </style>
-
-    <style name="roundedImageViewTopLeft" parent="">
-        <item name="cornerSizeTopRight">0dp</item>
-        <item name="cornerSizeTopLeft">8dp</item>
-        <item name="cornerSizeBottomLeft">0dp</item>
-        <item name="cornerSizeBottomRight">0dp</item>
-        <item name="cornerFamily">rounded</item>
-    </style>
-
-    <style name="roundedImageViewBottomLeft" parent="">
-        <item name="cornerSizeTopRight">0dp</item>
-        <item name="cornerSizeTopLeft">0dp</item>
-        <item name="cornerSizeBottomLeft">8dp</item>
-        <item name="cornerSizeBottomRight">0dp</item>
-        <item name="cornerFamily">rounded</item>
-    </style>
-
-    <style name="roundedImageViewTopRight" parent="">
-        <item name="cornerSizeTopRight">8dp</item>
-        <item name="cornerSizeTopLeft">0dp</item>
-        <item name="cornerSizeBottomLeft">0dp</item>
-        <item name="cornerSizeBottomRight">0dp</item>
-        <item name="cornerFamily">rounded</item>
-    </style>
-
-    <style name="roundedImageViewBottomRight" parent="">
-        <item name="cornerSizeTopRight">0dp</item>
-        <item name="cornerSizeTopLeft">0dp</item>
-        <item name="cornerSizeBottomLeft">0dp</item>
-        <item name="cornerSizeBottomRight">8dp</item>
-        <item name="cornerFamily">rounded</item>
     </style>
 
     <style name="delete_background_src">
@@ -331,11 +278,6 @@
 
     </style>
 
-    <style name="rounded_corner_stroke_main_src">
-
-        <item name="android:background">@drawable/rounded_corner_stroke_main</item>
-
-    </style>
 
     <style name="btn_background_main_src">
         <item name="android:background">@drawable/btn_rounded_background_lightsea</item>

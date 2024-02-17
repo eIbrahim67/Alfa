@@ -7,11 +7,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import com.bumptech.glide.Glide
 import com.eibrahim.alfa.R
 import com.eibrahim.alfa.mainActivity.Uri
 import com.google.android.material.imageview.ShapeableImageView
@@ -35,7 +34,7 @@ class DialogEditUserImage : DialogFragment() {
         val show_update_image_user : ShapeableImageView = root.findViewById(R.id.show_update_image_user)
         val btn_update_image_user : TextView = root.findViewById(R.id.btn_update_image_user)
         val btn_discard_update_image_user : TextView = root.findViewById(R.id.btn_discard_update_image_user)
-        val loading_update_image : ImageView = root.findViewById(R.id.loading_update_image)
+        val progressBar_edit_user_image : ProgressBar = root.findViewById(R.id.progressBar_edit_user_image)
 
         dialog?.setCancelable(false)
 
@@ -43,12 +42,7 @@ class DialogEditUserImage : DialogFragment() {
 
         btn_update_image_user.setOnClickListener {
 
-            loading_update_image.visibility = View.VISIBLE
-
-            Glide.with(this)
-                .asGif()
-                .load(R.drawable.infinity_loading_black)
-                .into(loading_update_image)
+            progressBar_edit_user_image.visibility = View.VISIBLE
 
             uploadImageToFirebase(Uri)
 

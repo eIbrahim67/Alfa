@@ -1,9 +1,9 @@
 package com.eibrahim.alfa.mainActivity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,21 +12,24 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.eibrahim.alfa.R
 import com.eibrahim.alfa.adapterClasses.AdapterRecycleViewPosts
 import com.eibrahim.alfa.bottomSheets.BottomSheetEditUserImage
 import com.eibrahim.alfa.bottomSheets.BottomSheetSettingsUser
 import com.eibrahim.alfa.dataClasses.ReadDataPosts
+import com.eibrahim.alfa.dataClasses.UserAdminData
 import com.eibrahim.alfa.declaredClasses.DeclareDataUsers
 import com.eibrahim.alfa.declaredClasses.FormatNumber
 import com.eibrahim.alfa.fragmentsShowrActivity.FragmentsViewerActivity
-import com.eibrahim.alfa.postFragments.newPostAdded
-import com.eibrahim.alfa.R
-import com.eibrahim.alfa.dataClasses.UserAdminData
+import com.eibrahim.alfa.fragmentsShowrActivity.ShowedUserAccount
+import com.eibrahim.alfa.fragmentsShowrActivity.myAccount
 import com.eibrahim.alfa.fragmentsShowrActivity.no_page
+import com.eibrahim.alfa.postFragments.newPostAdded
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.FirebaseAuth
@@ -56,7 +59,8 @@ class ProfileFragment : Fragment() {
     private lateinit var uid : String
     private lateinit var addPostBtn : Button
     private lateinit var editImageUser : RelativeLayout
-    private lateinit var btnSettings : RelativeLayout
+    private lateinit var btnSettings : ImageView
+    private lateinit var btnMessage : ImageView
     private lateinit var btnPostsUser : RelativeLayout
     private lateinit var btnRepliesUser : RelativeLayout
     private lateinit var choosePostsUser : LinearLayout
@@ -92,6 +96,7 @@ class ProfileFragment : Fragment() {
         addPostBtn = root.findViewById(R.id.add_post_btn)
         editImageUser = root.findViewById(R.id.edit_image_user)
         btnSettings = root.findViewById(R.id.btn_settings)
+        btnMessage = root.findViewById(R.id.btn_message)
         btnPostsUser = root.findViewById(R.id.btn_posts_user)
         btnRepliesUser = root.findViewById(R.id.btn_replies_user)
 
@@ -100,7 +105,16 @@ class ProfileFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
-        uid = auth.currentUser?.uid.toString()
+
+        if (myAccount){
+            uid = auth.currentUser?.uid.toString()
+        }else{
+            addPostBtn.setText("Follow")
+            btnSettings.visibility = View.GONE
+            btnMessage.visibility = View.VISIBLE
+            uid = ShowedUserAccount
+
+        }
 
         btnPostsUser.setOnClickListener {
             choosePostsUser.visibility = View.VISIBLE
@@ -138,6 +152,12 @@ class ProfileFragment : Fragment() {
 
             val bottomSheetSettingsUser = BottomSheetSettingsUser(requireActivity())
             bottomSheetSettingsUser.show(requireActivity().supportFragmentManager, "Settings")
+
+        }
+
+        btnMessage.setOnClickListener {
+
+            // TODO:implement the click om message button
 
         }
 
@@ -188,7 +208,7 @@ class ProfileFragment : Fragment() {
         firestoreDb = FirebaseFirestore.getInstance()
         firestore = FirebaseFirestore.getInstance()
         val auth = FirebaseAuth.getInstance()
-        uid = auth.currentUser?.uid.toString()
+        //uid = auth.currentUser?.uid.toString()
         listDataRecyclerView = arrayListOf()
 
         firestoreDb.collection("Users").document(uid)
@@ -251,7 +271,7 @@ class ProfileFragment : Fragment() {
     private fun eventChangeListerReplies() {
         firestore = FirebaseFirestore.getInstance()
         val auth = FirebaseAuth.getInstance()
-        uid = auth.currentUser?.uid.toString()
+        //uid = auth.currentUser?.uid.toString()
         listDataRecyclerView = arrayListOf()
 
         firestore.collection("Users").document(uid)
@@ -319,6 +339,7 @@ class ProfileFragment : Fragment() {
 
         val declareDataUsers = DeclareDataUsers()
         declareDataUsers.declareData(object : DeclareDataUsers.OnDataDeclaredListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onDataDeclared(userAdminData: UserAdminData?) {
                 if (userAdminData != null) {
 

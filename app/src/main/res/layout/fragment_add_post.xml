@@ -1,117 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/post_background"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".postFragments.AddPostFragment">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        style="@style/post_background">
-
-        <TextView
-            style="@style/TextColor_v2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/works_ans_v1"
-            android:text="Title"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
-
-        <EditText
-            style="@style/TextColor_v1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:minHeight="48dp"
-            android:fontFamily="@font/works_ans_v1"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-
-        <TextView
-            style="@style/TextColor_v2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/works_ans_v1"
-            android:text="Details"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/post_details"
-            style="@style/TextColor_v1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:minHeight="48dp"
-            android:fontFamily="@font/works_ans_v1"
-            android:inputType="textMultiLine"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="LabelFor,SpeakableTextPresentCheck"
-            android:importantForAutofill="no" />
-
-        <TextView
-            style="@style/TextColor_v2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:fontFamily="@font/works_ans_v1"
-            android:text="Tags"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="0dp"
+            android:orientation="vertical">
 
             <TextView
-                style="@style/TextColor_v1"
+                style="@style/TextColor_v2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="@font/works_ans_v1"
-                android:text="#"
+                android:text="Title"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
             <EditText
-                android:id="@+id/add_tag_text"
+                android:id="@+id/post_title"
                 style="@style/TextColor_v1"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:fontFamily="@font/works_ans_v1"
@@ -120,264 +49,194 @@
                 android:minHeight="48dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
-            <Button
-                android:id="@+id/add_new_tag"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                style="@style/checkout_background_btn"
-                android:text="Add"
-                android:textAllCaps="false"
+            <TextView
+                style="@style/TextColor_v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/works_ans_v1"
+                android:text="Details"
                 android:textSize="18sp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginStart="10dp"
-                tools:ignore="HardcodedText" />
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview_tags"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"/>
-
-        <RelativeLayout
-            android:id="@+id/image_add_post_collections"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <RelativeLayout
+            <EditText
+                android:id="@+id/post_details"
+                style="@style/TextColor_v1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/works_ans_v1"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:minHeight="48dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+            <TextView
+                style="@style/TextColor_v2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/stroke_8dp_black"
-                android:padding="4dp">
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/works_ans_v1"
+                android:text="Tags"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
-                <LinearLayout
-                    android:id="@+id/image_add_post_one"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextColor_v1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/works_ans_v1"
+                    android:text="#"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/add_tag_text"
+                    style="@style/TextColor_v1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/works_ans_v1"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <Button
+                    android:id="@+id/add_new_tag"
+                    style="@style/checkout_background_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Add"
+                    android:textAllCaps="false"
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/image_add_post_collections"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/image_add_post_one_v1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:contentDescription="profile"
-                        tools:ignore="HardcodedText"
-                        android:scaleType="centerCrop"
-                        android:adjustViewBounds="true"
-                        app:shapeAppearanceOverlay="@style/roundedImageViewPost"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/image_add_post_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/image_add_post_two_v1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:layout_weight="1"
-                        android:layout_marginEnd="1dp"
-                        app:shapeAppearanceOverlay="@style/roundedImageViewTopLeftBottomLeft"/>
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/image_add_post_two_v2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:layout_weight="1"
-                        android:layout_marginStart="1dp"
-                        app:shapeAppearanceOverlay="@style/roundedImageViewTopRightBottomRight"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/image_add_post_three"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/stroke_8dp_black"
+                    android:padding="4dp">
 
                     <LinearLayout
+                        android:id="@+id/image_add_post_one"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="200dp"
                         android:orientation="vertical"
-                        android:layout_weight="1">
+                        android:visibility="gone">
 
                         <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/image_add_post_three_v1"
+                            android:id="@+id/image_add_post_one_v1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
                             android:adjustViewBounds="true"
+                            android:contentDescription="profile"
                             android:scaleType="centerCrop"
-                            android:layout_marginEnd="1dp"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            app:shapeAppearanceOverlay="@style/roundedImageViewTopLeft"
-                            tools:ignore="NestedWeights" />
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/image_add_post_three_v2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:scaleType="centerCrop"
-                            android:layout_marginEnd="1dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_weight="1"
-                            app:shapeAppearanceOverlay="@style/roundedImageViewBottomLeft"/>
+                            app:shapeAppearanceOverlay="@style/roundedImageViewPost"
+                            tools:ignore="HardcodedText" />
 
                     </LinearLayout>
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/image_add_post_three_v3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:adjustViewBounds="true"
-                        android:scaleType="centerCrop"
-                        android:layout_weight="1"
-                        android:layout_marginStart="1dp"
-                        app:shapeAppearanceOverlay="@style/roundedImageViewTopRightBottomRight"/>
+                </RelativeLayout>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/image_add_post_four"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:orientation="horizontal"
-                    android:visibility="gone"
-                    android:baselineAligned="false">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/image_add_post_four_v1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:scaleType="centerCrop"
-                            android:layout_marginEnd="1dp"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            app:shapeAppearanceOverlay="@style/roundedImageViewTopLeft"
-                            tools:ignore="NestedWeights" />
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/image_add_post_four_v2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:scaleType="centerCrop"
-                            android:layout_marginEnd="1dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_weight="1"
-                            app:shapeAppearanceOverlay="@style/roundedImageViewBottomLeft"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_weight="1">
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/image_add_post_four_v3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:scaleType="centerCrop"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginBottom="1dp"
-                            android:layout_weight="1"
-                            app:shapeAppearanceOverlay="@style/roundedImageViewTopRight"
-                            tools:ignore="NestedWeights" />
-
-                        <com.google.android.material.imageview.ShapeableImageView
-                            android:id="@+id/image_add_post_four_v4"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:adjustViewBounds="true"
-                            android:scaleType="centerCrop"
-                            android:layout_marginStart="1dp"
-                            android:layout_marginTop="1dp"
-                            android:layout_weight="1"
-                            app:shapeAppearanceOverlay="@style/roundedImageViewBottomRight"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
+                <ImageView
+                    android:id="@+id/image_add_post_clear"
+                    style="@style/delete_background_src"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:contentDescription="image"
+                    android:padding="5dp"
+                    tools:ignore="HardcodedText" />
 
             </RelativeLayout>
-
-            <ImageView
-                android:id="@+id/image_add_post_clear"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:padding="5dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                style="@style/delete_background_src"
-                android:contentDescription="image"
-                tools:ignore="HardcodedText" />
-
-        </RelativeLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:baselineAligned="false">
+                android:layout_marginBottom="100dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
                 <RelativeLayout
                     android:id="@+id/upload_photo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/background_add_photo"
-                    android:layout_marginEnd="10dp"
                     android:clickable="true"
                     android:focusable="true">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:layout_centerInParent="true"
+                        android:orientation="vertical"
                         tools:ignore="UseCompoundDrawables,UselessParent">
 
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/pictures_icon_gray"
                             android:layout_gravity="center"
                             android:contentDescription="upload"
+                            android:src="@drawable/pictures_icon_gray"
                             tools:ignore="HardcodedText" />
 
                         <TextView
@@ -401,23 +260,23 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/background_add_photo"
-                    android:layout_marginStart="10dp">
+                    android:background="@drawable/background_add_photo">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical"
                         android:layout_centerInParent="true"
+                        android:orientation="vertical"
                         tools:ignore="UseCompoundDrawables,UselessParent">
 
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/camera_icon_gray"
                             android:layout_gravity="center"
                             android:contentDescription="take a photo"
+                            android:src="@drawable/camera_icon_gray"
                             tools:ignore="HardcodedText" />
 
                         <TextView
@@ -441,44 +300,45 @@
 
             </LinearLayout>
 
-        <RelativeLayout
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/upload_btn"
+            style="@style/checkout_background_btn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:text="Upload"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/black_v1"
+            android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/upload_btn"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Upload"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                tools:ignore="HardcodedText"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                style="@style/checkout_background_btn"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"/>
+    </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/loading_image"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_centerInParent="true"
-                android:background="@color/black_v1"
-                android:visibility="gone"
-                android:contentDescription="loading"
-                tools:ignore="HardcodedText" />
-
-        </RelativeLayout>
-
-    </LinearLayout>
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

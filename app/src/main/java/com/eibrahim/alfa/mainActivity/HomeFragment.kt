@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
 
         val recyclerViewStories :RecyclerView = root.findViewById(R.id.recyclerview_stories)
 
-        val adapterStories = AdapterRecyclerviewStories(dataList, requireContext())
+        val adapterStories = AdapterRecyclerviewStories(dataList)
 
         recyclerViewStories.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
@@ -159,6 +159,7 @@ class HomeFragment : Fragment() {
 
         val declareDataUsers = DeclareDataUsers()
         declareDataUsers.declareData(object : DeclareDataUsers.OnDataDeclaredListener {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onDataDeclared(userAdminData: UserAdminData?) {
                 if (userAdminData != null) {
 

@@ -22,6 +22,8 @@ import com.eibrahim.alfa.fragmentsShowrActivity.FragmentsViewerActivity
 import com.eibrahim.alfa.fragmentsShowrActivity.ShowedImageUrl
 import com.eibrahim.alfa.fragmentsShowrActivity.no_page
 import com.eibrahim.alfa.R
+import com.eibrahim.alfa.fragmentsShowrActivity.ShowedUserAccount
+import com.eibrahim.alfa.fragmentsShowrActivity.myAccount
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
@@ -330,7 +332,12 @@ class AdapterRecycleViewPosts(
 
         }
 
-        holder.commentBtn.setOnClickListener {
+        holder.imagePup.setOnClickListener {
+
+            no_page = 0
+            ShowedUserAccount =  post.userId?.id.toString()
+            myAccount = false
+            context.startActivity(intent)
 
         }
 
