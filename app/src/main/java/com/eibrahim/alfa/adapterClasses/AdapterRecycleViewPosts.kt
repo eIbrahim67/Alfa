@@ -1,9 +1,13 @@
 package com.eibrahim.alfa.adapterClasses
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.text.Spannable
+import android.text.SpannableString
 import android.text.format.DateUtils
+import android.text.style.ForegroundColorSpan
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.MenuItem
@@ -56,7 +60,7 @@ class AdapterRecycleViewPosts(
         return postsDataList.size
     }
 
-    @SuppressLint("ResourceType")
+
     override fun onBindViewHolder(holder: RecyclerViewPosts, position: Int) {
 
         val post = postsDataList[position]
@@ -99,7 +103,26 @@ class AdapterRecycleViewPosts(
 
         holder.timeText.text = time.toString()
 
-        holder.postText.text = post.postText.toString()
+        val fullText = post.postText.toString()
+
+        val keyword = "MR DRAGON"
+
+        val spannableString = SpannableString(fullText)
+
+        val startIndex = fullText.indexOf(keyword, ignoreCase = true)
+        if (startIndex != -1) {
+            val endIndex = startIndex + keyword.length
+            spannableString.setSpan(
+                ForegroundColorSpan(Color.GREEN),
+                startIndex,
+                endIndex,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+
+        holder.postText.text = spannableString
+
+
 
         Picasso.get()
             .load(post.imageUrl)
@@ -395,8 +418,3 @@ class AdapterRecycleViewPosts(
     }
 
 }
-
-
-
-
-

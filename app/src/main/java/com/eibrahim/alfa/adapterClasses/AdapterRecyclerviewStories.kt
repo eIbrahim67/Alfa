@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.eibrahim.alfa.R
+import com.google.android.material.imageview.ShapeableImageView
 
 class AdapterRecyclerviewStories(private var listOfData: List<String>)
     : RecyclerView.Adapter<StoriesViewHolder>() {
@@ -24,7 +25,13 @@ class AdapterRecyclerviewStories(private var listOfData: List<String>)
 
     override fun onBindViewHolder(holder: StoriesViewHolder, position: Int) {
 
+        //holder.imageStories.setImageResource(R.drawable.logo)
+
     }
 }
 
-class StoriesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+class StoriesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+
+    val imageStories : ShapeableImageView = itemView.findViewById(R.id.imageStories)
+
+}

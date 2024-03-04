@@ -21,11 +21,12 @@
         tools:ignore="SpeakableTextPresentCheck">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/pup_img"
+            android:id="@+id/imageStories"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
+            android:src="@drawable/logo"
             app:shapeAppearanceOverlay="@style/roundedImageViewUser" />
 
     </RelativeLayout>

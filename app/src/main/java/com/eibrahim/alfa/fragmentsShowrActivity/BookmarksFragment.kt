@@ -28,7 +28,7 @@ class BookmarksFragment : Fragment() {
 
     private lateinit var firestore : FirebaseFirestore
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
-    private lateinit var rv: RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private lateinit var listDataRecyclerView : ArrayList<ReadDataPosts>
     private lateinit var adapter : AdapterRecycleViewPosts
     private lateinit var uid : String
@@ -42,11 +42,11 @@ class BookmarksFragment : Fragment() {
 
         val Root = inflater.inflate(R.layout.fragment_bookmarks, container, false)
 
-        rv = Root.findViewById(R.id.RecyclerView_bookmarks)
         backBtn = Root.findViewById(R.id.back_bookmarks_btn)
+        recyclerView = Root.findViewById(R.id.RecyclerView_bookmarks)
 
-        rv.layoutManager = LinearLayoutManager(requireContext())
-        rv.setHasFixedSize(true)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
 
         swipeRefreshLayout = Root.findViewById(R.id.fragment_Bookmarked_posts)
 
@@ -115,7 +115,7 @@ class BookmarksFragment : Fragment() {
             }
 
         adapter = AdapterRecycleViewPosts(requireContext(), listDataRecyclerView, "ProfileFragment")
-        rv.adapter = adapter
+        recyclerView.adapter = adapter
     }
 
     @SuppressLint("NotifyDataSetChanged")
